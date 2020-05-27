@@ -1,0 +1,17 @@
+.NavigationBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.navigationLink {
+  padding: 0.5em;
+  margin: 0.5em;
+  font-size: 1em;
+}
+
+.navigationLink:hover {
+  background-color: #f7f7f2;
+  color: #313639;
+  border-radius: 0.5em;
+}

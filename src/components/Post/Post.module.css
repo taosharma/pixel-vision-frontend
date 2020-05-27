@@ -1,0 +1,41 @@
+.Post {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 3em;
+  height: auto;
+  width: 65vw;
+  padding: 2em;
+  margin: 2em;
+  background-color: #f7f7f2;
+  color: #313639;
+  border-radius: 1em;
+}
+
+.image {
+  width: 40vw;
+  height: auto;
+}
+
+.title {
+  padding: 1em;
+  margin: 0em;
+}
+
+.date {
+  padding: 0.2em;
+  margin: 0em;
+}
+
+.audio {
+  padding: 1em;
+  margin: 0em;
+}
+
+.text {
+  padding: 1em;
+  margin: 0em;
+}
