@@ -4,7 +4,6 @@ const characters = {
   image2:
     'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.blogcdn.com%2Fwww.joystiq.com%2Fmedia%2F2007%2F04%2Fold-people-playing-ps.jpg&f=1&nofb=1',
   title1: 'The Podcast',
-  title2: 'Ben and Tao',
   podcast: `Got square eyes? Dream in pixels? That's Pixel Vision. Put down the controller, step away from the keyboard, give your ears some love and take a break without, you know, taking a break, with Ben and Tao's leftfield video game analysis, fresh from the screen.
 
   I'm Ben. And I'm Tao. And this is...

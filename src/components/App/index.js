@@ -41,11 +41,11 @@ function App() {
           <Route path='/characters'>
             <Characters characters={characters} />
           </Route>
-          <Route path='/writing'>
-            <Page posts={writing} handlePostId={handlePostId} />
-          </Route>
           <Route path='/writing/:id'>
             <Post post={writing[postId]} />
+          </Route>
+          <Route path='/writing'>
+            <Page posts={writing} handlePostId={handlePostId} />
           </Route>
           <Route path='/episodes/:id'>
             <Post post={episodes[postId]} />

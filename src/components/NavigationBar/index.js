@@ -41,7 +41,7 @@ function NavigationBar({ links }) {
     } else history.push(`/${link}`);
   }
 
-  // The handleNavigationClick function calls the two functions above.
+  // The handleNavigationClick function calls the two functions above (so that they can be called in one onClick attribute).
 
   function handleNavigationClick(link, index) {
     handleHistory(link);

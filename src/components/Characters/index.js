@@ -3,7 +3,7 @@ import React from 'react';
 import css from './Characters.module.css';
 
 function Characters({ characters }) {
-  const { image1, image2, title1, title2, podcast, ben, tao } = characters;
+  const { image1, image2, title1, podcast, ben, tao } = characters;
   return (
     <main className={css.Characters}>
       <article className={css.container}>
