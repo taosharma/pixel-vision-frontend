@@ -24,10 +24,14 @@ import contact from '../../dummyData/contact';
 // App component:
 
 function App() {
+  // State that tracks the id of the post to be shown on /episodes or /writing
+
   const [postId, setPostId] = useState(0);
 
-  function handlePostId(link) {
-    setPostId(link);
+  // The handlePostId changes the postId state to match the id (and index) of the associated post.
+
+  function handlePostId(id) {
+    setPostId(id);
   }
 
   return (
