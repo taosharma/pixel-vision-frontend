@@ -6,8 +6,6 @@ import css from './App.module.css';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import { useHistory } from 'react-router-dom';
-
 // Components:
 
 import Header from '../Header';

@@ -1,6 +1,6 @@
 const writing = [
   {
-    id: 1,
+    id: 0,
     type: 'writing',
     image:
       'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pcgamesn.com%2Fwp-content%2Fuploads%2F2019%2F01%2Falien-isolation.jpg&f=1&nofb=1',
