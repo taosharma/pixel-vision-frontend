@@ -1,14 +1,14 @@
 import React from 'react';
 
-import css from './Inventory.module.css';
+import css from './Page.module.css';
 
 import Post from '../Post';
 
-function Page({ posts }) {
+function Page({ posts, handlePostId }) {
   return (
     <main className={css.Page}>
       {posts.map((post) => (
-        <Post post={post} />
+        <Post post={post} handlePostId={handlePostId} />
       ))}
     </main>
   );

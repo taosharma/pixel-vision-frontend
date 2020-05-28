@@ -10,6 +10,8 @@ function NavigationBar({ links }) {
   function handleHistory(link) {
     if (link === 'Support') {
       window.location.href = 'https://www.patreon.com';
+    } else if (link === 'Episodes') {
+      history.push(`/`);
     } else history.push(`/${link}`);
   }
 

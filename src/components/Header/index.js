@@ -6,7 +6,7 @@ import logo from './super-mario.png';
 
 import NavigationBar from '../NavigationBar';
 
-const links = ['Inventory', 'Writing', 'Characters', 'Support', 'Contact'];
+const links = ['Episodes', 'Writing', 'Characters', 'Support', 'Contact'];
 
 function Header() {
   return (

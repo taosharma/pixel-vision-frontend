@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import css from './App.module.css';
 
 // Modules:
 
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+import { useHistory } from 'react-router-dom';
 
 // Components:
 
@@ -12,10 +14,11 @@ import Header from '../Header';
 import Page from '../Page';
 import Characters from '../Characters';
 import Contact from '../Contact';
+import Post from '../Post';
 
 // Data:
 
-import inventory from '../../dummyData/inventory';
+import episodes from '../../dummyData/episodes';
 import writing from '../../dummyData/writing';
 import characters from '../../dummyData/characters';
 import contact from '../../dummyData/contact';
@@ -23,6 +26,12 @@ import contact from '../../dummyData/contact';
 // App component:
 
 function App() {
+  const [postId, setPostId] = useState(0);
+
+  function handlePostId(link) {
+    setPostId(link);
+  }
+
   return (
     <section className={css.App}>
       <Router>
@@ -35,10 +44,16 @@ function App() {
             <Characters characters={characters} />
           </Route>
           <Route path='/writing'>
-            <Page posts={writing} />
+            <Page posts={writing} handlePostId={handlePostId} />
+          </Route>
+          <Route path='/writing/:id'>
+            <Post post={writing[postId]} />
+          </Route>
+          <Route path='/episodes/:id'>
+            <Post post={episodes[postId]} />
           </Route>
           <Route path='/'>
-            <Page posts={inventory} />
+            <Page posts={episodes} handlePostId={handlePostId} />
           </Route>
         </Switch>
       </Router>
