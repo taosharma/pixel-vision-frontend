@@ -9,14 +9,10 @@ function Characters({ characters }) {
       <img className={css.image} src={image1} />
       <h3 className={css.title}>{title1}</h3>
       <p className={css.text}>{podcast}</p>
-      <section className={css.columns}>
-        <h3 className={css.title}>Ben</h3>
-        <h3 className={css.title}>Tao</h3>
-      </section>
-      <section className={css.columns}>
-        <p className={css.text}>{ben}</p>
-        <p className={css.text}>{tao}</p>
-      </section>
+      <h3 className={css.title}>Ben</h3>
+      <p className={css.text}>{ben}</p>
+      <h3 className={css.title}>Tao</h3>
+      <p className={css.text}>{tao}</p>
       <img className={css.image} src={image2} />
     </article>
   );
