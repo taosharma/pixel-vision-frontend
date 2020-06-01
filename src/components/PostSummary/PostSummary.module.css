@@ -1,4 +1,4 @@
-.Contact {
+.Post {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -17,13 +17,26 @@
 }
 
 .image {
-  padding: 1em;
-  margin: 0em;
   width: 40vw;
   height: auto;
 }
 
 .title {
+  padding: 1em;
+  margin: 0em;
+  font-weight: bolder;
+  font-style: normal;
+  font-size: larger;
+  color: #313639;
+  text-decoration: solid;
+}
+
+.date {
+  padding: 0.2em;
+  margin: 0em;
+}
+
+.audio {
   padding: 1em;
   margin: 0em;
 }

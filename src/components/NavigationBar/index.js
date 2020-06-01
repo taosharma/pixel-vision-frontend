@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import css from './NavigationBar.module.css';
 
@@ -31,6 +31,10 @@ function NavigationBar({ links }) {
     ]);
   }
 
+  useEffect(() => {
+    handleActive('episodes', 0);
+  }, []);
+
   // The handleHistory function redirects the browser to the linked page.
 
   function handleHistory(link) {
@@ -41,7 +45,7 @@ function NavigationBar({ links }) {
     } else history.push(`/${link}`);
   }
 
-  // The handleNavigationClick function calls the two functions above.
+  // The handleNavigationClick function calls the two functions above (so that they can be called in one onClick attribute).
 
   function handleNavigationClick(link, index) {
     handleHistory(link);

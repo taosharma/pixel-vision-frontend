@@ -24,10 +24,19 @@ import contact from '../../dummyData/contact';
 // App component:
 
 function App() {
+  // State that tracks the id of the post to be shown on /episodes or /writing
+
   const [postId, setPostId] = useState(0);
 
-  function handlePostId(link) {
-    setPostId(link);
+  // The handlePostId changes the postId state to match the id (and index) of the associated post.
+
+  function handlePostId(id) {
+    setPostId(id);
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
   }
 
   return (
@@ -41,11 +50,11 @@ function App() {
           <Route path='/characters'>
             <Characters characters={characters} />
           </Route>
-          <Route path='/writing'>
-            <Page posts={writing} handlePostId={handlePostId} />
-          </Route>
           <Route path='/writing/:id'>
             <Post post={writing[postId]} />
+          </Route>
+          <Route path='/writing'>
+            <Page posts={writing} handlePostId={handlePostId} />
           </Route>
           <Route path='/episodes/:id'>
             <Post post={episodes[postId]} />
