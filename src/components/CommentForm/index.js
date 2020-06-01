@@ -9,6 +9,11 @@ function getDateString() {
   return date.toDateString();
 }
 
+const maxCommentLength = {
+  name: 20,
+  text: 5000,
+};
+
 function CommentForm() {
   const [comment, setComment] = useState({
     name: '',
@@ -19,7 +24,6 @@ function CommentForm() {
   function handleChange(event) {
     const input = event.target.value;
     const name = event.target.name;
-    console.log(comment);
     setComment({ ...comment, [name]: input });
   }
 
@@ -30,14 +34,14 @@ function CommentForm() {
         label={'Name:'}
         name={'name'}
         value={comment.name}
-        maxLength={20}
+        maxLength={maxCommentLength.name}
         handleChange={handleChange}
       />
       <Input
         label={'Comment:'}
         name={'text'}
         value={comment.text}
-        maxLength={5000}
+        maxLength={maxCommentLength.text}
         handleChange={handleChange}
       />
       <button>Submit</button>
