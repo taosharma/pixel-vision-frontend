@@ -32,6 +32,11 @@ function App() {
 
   function handlePostId(id) {
     setPostId(id);
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
   }
 
   return (

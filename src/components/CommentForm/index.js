@@ -25,6 +25,7 @@ function CommentForm() {
 
   return (
     <main className={css.CommentForm}>
+      <h3>Leave a comment:</h3>
       <Input
         label={'Name:'}
         name={'name'}

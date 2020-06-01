@@ -23,9 +23,7 @@ function Post({ post }) {
           <p className={css.text}>{paragraph}</p>
         ))}
       </section>
-      {comments.map((comment) => (
-        <Comment comment={comment} />
-      ))}
+      {comments && comments.map((comment) => <Comment comment={comment} />)}
       <CommentForm />
     </main>
   );
