@@ -13,6 +13,20 @@
   background-color: #f7f7f2;
   color: #313639;
   border-radius: 1em;
+  border: 0.25em solid #313639;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 0em;
+  margin: 0em;
+  height: auto;
+  width: 50vw;
 }
 
 .image {

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import css from './CommentForm.module.css';
+
 import Input from '../Input';
 
 function getDateString() {
@@ -22,19 +24,22 @@ function CommentForm() {
   }
 
   return (
-    <main>
+    <main className={css.CommentForm}>
       <Input
-        label={'Name'}
+        label={'Name:'}
         name={'name'}
         value={comment.name}
+        maxLength={20}
         handleChange={handleChange}
       />
       <Input
-        label={'Comment'}
+        label={'Comment:'}
         name={'text'}
         value={comment.text}
+        maxLength={5000}
         handleChange={handleChange}
       />
+      <button>Submit</button>
     </main>
   );
 }

@@ -9,7 +9,6 @@ function PostSummary({ post, handlePostId }) {
 
   return (
     <main className={css.Post}>
-      <p>I am a post summary</p>
       <img className={css.image} src={image} />
       <Link
         className={css.title}

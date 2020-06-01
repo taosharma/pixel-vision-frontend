@@ -1,0 +1,26 @@
+.CommentForm {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: auto;
+  width: 35vw;
+  padding: 1em;
+  margin: 1em;
+  background-color: #f45b69;
+  color: #f7f7f2;
+  border-radius: 1em;
+  border: 0.25em solid #313639;
+}
+
+button {
+  padding: 0.5em;
+  margin: 0.5em;
+  font-size: 1em;
+  font-family: inherit;
+  background-color: #f7f7f2;
+  color: #313639;
+  border-radius: 0.5em;
+}

@@ -1,0 +1,19 @@
+.Input {
+  padding: 0.5em;
+  margin: 0.5em;
+}
+
+.label {
+  padding: 1em;
+  margin: 0em;
+  font-weight: bold;
+}
+
+textarea {
+  padding: 0.5em;
+  font-family: inherit;
+  max-width: 25vw;
+  max-height: 20vh;
+  min-width: 25vw;
+  min-height: 5vh;
+}

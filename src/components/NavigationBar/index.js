@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import css from './NavigationBar.module.css';
 
@@ -30,6 +30,10 @@ function NavigationBar({ links }) {
       ...defaultActive.slice(index + 1),
     ]);
   }
+
+  useEffect(() => {
+    handleActive('episodes', 0);
+  }, []);
 
   // The handleHistory function redirects the browser to the linked page.
 

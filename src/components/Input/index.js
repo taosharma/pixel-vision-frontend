@@ -1,15 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-function Input({ label, name, value, handleChange }) {
+import css from './Input.module.css';
+
+function Input({ label, name, value, maxLength, handleChange }) {
   return (
-    <section>
-      <label>{label}</label>
-      <input
+    <section className={css.Input}>
+      <p className={css.label}>{label}</p>
+      <textarea
         value={value}
         onChange={handleChange}
         name={name}
         type='text'
-      ></input>
+        maxLength={maxLength}
+      ></textarea>
     </section>
   );
 }
