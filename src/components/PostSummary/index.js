@@ -4,7 +4,7 @@ import css from './PostSummary.module.css';
 
 import { Link } from 'react-router-dom';
 
-function PostSummary({ post, index, handlePostId }) {
+function PostSummary({ post, index, handlePostIndex }) {
   const { id, type, image, title, date, link, text } = post;
 
   return (
@@ -12,7 +12,7 @@ function PostSummary({ post, index, handlePostId }) {
       <img className={css.image} src={image} />
       <Link
         className={css.title}
-        onClick={() => handlePostId(index)}
+        onClick={() => handlePostIndex(index)}
         to={`/${type}/${id}`}
       >
         {title}

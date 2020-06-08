@@ -24,20 +24,6 @@ import contact from '../../dummyData/contact';
 // App component:
 
 function App() {
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  const handleScroll = () => {
-    const position = window.pageYOffset;
-    setScrollPosition(position);
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
   const [episodes, setEpisodes] = useState(exampleEpisodes);
   const [writing, setWriting] = useState(exampleWriting);
 
@@ -62,13 +48,12 @@ function App() {
 
   // State that tracks the id of the post to be shown on /episodes or /writing
 
-  const [postId, setPostId] = useState(0);
+  const [postIndex, setPostIndex] = useState(0);
 
-  // The handlePostId changes the postId state to match the id (and index) of the associated post.
+  // The handlePostIndex changes the postIndex state to match the index of the associated post.
 
-  function handlePostId(id) {
-    console.log(id);
-    setPostId(id);
+  function handlePostIndex(index) {
+    setPostIndex(index);
     window.scroll({
       top: 0,
       left: 0,
@@ -88,16 +73,16 @@ function App() {
             <Characters characters={characters} />
           </Route>
           <Route path='/writing/:id'>
-            <Post post={writing[postId]} />
+            <Post post={writing[postIndex]} />
           </Route>
           <Route path='/writing'>
-            <Page posts={writing} handlePostId={handlePostId} />
+            <Page posts={writing} handlePostIndex={handlePostIndex} />
           </Route>
           <Route path='/episode/:id'>
-            <Post post={episodes[postId]} />
+            <Post post={episodes[postIndex]} />
           </Route>
           <Route path='/'>
-            <Page posts={episodes} handlePostId={handlePostId} />
+            <Page posts={episodes} handlePostIndex={handlePostIndex} />
           </Route>
         </Switch>
       </Router>
