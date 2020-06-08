@@ -7,8 +7,13 @@ import PostSummary from '../PostSummary';
 function Page({ posts, handlePostId }) {
   return (
     <main className={css.Page}>
-      {posts.map((post) => (
-        <PostSummary post={post} handlePostId={handlePostId} />
+      {posts.map((post, index) => (
+        <PostSummary
+          post={post}
+          handlePostId={handlePostId}
+          index={index}
+          key={index}
+        />
       ))}
     </main>
   );

@@ -1,4 +1,4 @@
-const writing = [
+const exampleWriting = [
   {
     id: 0,
     type: 'writing',
@@ -27,4 +27,4 @@ const writing = [
   },
 ];
 
-export default writing;
+export default exampleWriting;

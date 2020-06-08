@@ -60,6 +60,7 @@ function NavigationBar({ links }) {
             active[index].active ? css.activeNavigationLink : css.navigationLink
           }
           onClick={() => handleNavigationClick(link.toLowerCase(), index)}
+          key={index}
         >
           {link}
         </p>

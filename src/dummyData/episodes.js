@@ -1,6 +1,6 @@
 import comments from './comments';
 
-const episodes = [
+const exampleEpisodes = [
   {
     id: 0,
     type: 'episodes',
@@ -42,4 +42,4 @@ const episodes = [
   },
 ];
 
-export default episodes;
+export default exampleEpisodes;
