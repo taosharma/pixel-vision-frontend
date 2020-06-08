@@ -14,7 +14,7 @@ import Characters from '../Characters';
 import Contact from '../Contact';
 import Post from '../Post';
 
-// Data:
+// Example data:
 
 import exampleEpisodes from '../../dummyData/episodes';
 import exampleWriting from '../../dummyData/writing';
@@ -24,8 +24,13 @@ import contact from '../../dummyData/contact';
 // App component:
 
 function App() {
+  // The episodes and writing state holds the two types of post that are listed on the website.
+
   const [episodes, setEpisodes] = useState(exampleEpisodes);
   const [writing, setWriting] = useState(exampleWriting);
+
+  /*   This useEffect runs a fetch to the pixelVisionTable database when the website loads, and sets the episodes and writing state 
+accordingly. */
 
   useEffect(() => {
     async function fetchPosts() {
@@ -40,8 +45,6 @@ function App() {
 
       const writing = posts.filter((post) => post.type === 'writing');
       setWriting(writing);
-
-      console.log(episodes[0]);
     }
     fetchPosts();
   }, []);
