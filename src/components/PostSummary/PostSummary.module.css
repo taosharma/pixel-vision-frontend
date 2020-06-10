@@ -75,7 +75,7 @@ audio:focus {
   font-style: normal;
   text-decoration: solid;
   align-self: center;
-  transition: 0.2s;
+  transition: 0.3s;
 }
 
 .readMore:hover {
@@ -83,5 +83,5 @@ audio:focus {
   color: #f7f7f2;
   /* border-radius: 0.5em; */
   transform: scale(1.1);
-  transition: 0.2s;
+  transition: 0.3s;
 }

@@ -44,7 +44,7 @@ function CommentForm() {
         maxLength={maxCommentLength.text}
         handleChange={handleChange}
       />
-      <button>Submit</button>
+      <p className={css.submit}>Submit</p>
     </main>
   );
 }
