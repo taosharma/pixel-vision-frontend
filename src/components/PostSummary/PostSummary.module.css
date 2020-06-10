@@ -5,12 +5,11 @@
   justify-content: center;
   align-items: center;
   align-content: center;
-  padding: 3em;
+  padding: 1.5em;
+  margin: 2em;
   height: auto;
   width: 40vw;
-  /* min-width: 25em; Mess around with this so that background disappears before content gets smaller. */
-  padding: 2em;
-  margin: 2em;
+  min-width: 25em;
   background-color: #f7f7f2;
   color: #313639;
   /* border-radius: 1em; */
@@ -23,26 +22,49 @@
 }
 
 .title {
-  padding: 1em;
+  padding: 0.5em;
+  padding-left: 0em;
   margin: 0em;
   font-weight: bolder;
   font-style: normal;
-  font-size: larger;
+  font-size: 2em;
   color: #313639;
   text-decoration: solid;
+  align-self: flex-start;
 }
 
 .date {
-  padding: 0.2em;
+  padding: 0.5em;
+  padding-left: 0em;
   margin: 0em;
+  align-self: flex-start;
+  font-weight: lighter;
+  font-style: italic;
 }
 
 .audio {
   padding: 1em;
+  padding-left: 0em;
   margin: 0em;
+  align-self: center;
 }
 
 .text {
   padding: 1em;
+  padding-left: 0em;
   margin: 0em;
+  align-self: flex-start;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.readMore {
+  background-color: #f45b69;
+  color: #f7f7f2;
+  padding: 0.5em;
+  margin: 1em;
+  font-size: 1em;
+  font-style: normal;
+  text-decoration: solid;
+  align-self: center;
 }

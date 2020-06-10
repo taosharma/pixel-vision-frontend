@@ -47,7 +47,10 @@ accordingly. */
       setEpisodes(reverseOrderEpisodes);
 
       const writing = posts.filter((post) => post.type === 'writing');
-      setWriting(writing);
+      const reverseOrderWriting = writing
+        .sort((a, b) => parseFloat(a.number) - parseFloat(b.number))
+        .reverse();
+      setWriting(reverseOrderWriting);
     }
     fetchPosts();
   }, []);

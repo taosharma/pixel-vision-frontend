@@ -18,12 +18,19 @@ function PostSummary({ post, index, handlePostIndex }) {
         {title}
       </Link>
       <p className={css.date}>{date}</p>
+      <p className={css.text}>{text[0]}</p>
       {link && (
         <audio className={css.audio} controls>
           <source src={link}></source>
         </audio>
       )}
-      <p className={css.text}>{text[0]}</p>
+      <Link
+        className={css.readMore}
+        onClick={() => handlePostIndex(index)}
+        to={`/${type}/${id}`}
+      >
+        Read more
+      </Link>
     </main>
   );
 }
