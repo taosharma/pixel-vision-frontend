@@ -12,8 +12,8 @@
   min-width: 25em;
   background-color: #f7f7f2;
   color: #313639;
-  /* border-radius: 1em; */
-  border: 0.1em solid #313639;
+  border: 0.1em solid #f7f7f2;
+  box-shadow: 0.3em -0.3em #e7e7da;
 }
 
 .container {
