@@ -14,14 +14,14 @@ function Post({ post }) {
         <img className={css.image} src={image} />
         <h3 className={css.title}>{title}</h3>
         <p className={css.date}>{date}</p>
+        {text.map((paragraph) => (
+          <p className={css.text}>{paragraph}</p>
+        ))}
         {link && (
           <audio className={css.audio} controls>
             <source src={link}></source>
           </audio>
         )}
-        {text.map((paragraph) => (
-          <p className={css.text}>{paragraph}</p>
-        ))}
       </section>
       {comments && comments.map((comment) => <Comment comment={comment} />)}
       <CommentForm />

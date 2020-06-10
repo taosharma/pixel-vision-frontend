@@ -13,7 +13,7 @@
   background-color: #f7f7f2;
   color: #313639;
   /* border-radius: 1em; */
-  border: 0.25em solid #313639;
+  border: 0.1em solid #313639;
 }
 
 .container {
@@ -31,6 +31,7 @@
 
 .image {
   width: 40vw;
+  min-width: 25em;
   height: auto;
 }
 
@@ -53,13 +54,19 @@
   align-self: flex-start;
   font-weight: lighter;
   font-style: italic;
+  font-size: 1.2em;
 }
 
 .audio {
-  padding: 1em;
-  padding-left: 0em;
-  margin: 0em;
+  padding: 0.2em;
+  margin: 0.8em;
   align-self: center;
+  background-color: #313639;
+  border-radius: 30px;
+}
+
+audio:focus {
+  outline: none;
 }
 
 .text {

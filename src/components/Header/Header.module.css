@@ -13,6 +13,7 @@
   padding: 0em;
   margin: 0em;
   border-bottom: 0.25em solid #f7f7f2;
+  cursor: default;
 }
 
 .logo {
@@ -26,12 +27,14 @@
   padding: 0.5em;
   margin: 0em;
   font-size: 1em;
+  cursor: default;
 }
 
 .title {
   padding: 0.2em;
   margin: 0em;
   font-size: 3.5em;
+  cursor: default;
 }
 
 .NavigationBar {

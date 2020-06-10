@@ -19,11 +19,7 @@ function PostSummary({ post, index, handlePostIndex }) {
       </Link>
       <p className={css.date}>{date}</p>
       <p className={css.text}>{text[0]}</p>
-      {link && (
-        <audio className={css.audio} controls>
-          <source src={link}></source>
-        </audio>
-      )}
+      {link && <audio className={css.audio} src={link} controls></audio>}
       <Link
         className={css.readMore}
         onClick={() => handlePostIndex(index)}
