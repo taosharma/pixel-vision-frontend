@@ -41,7 +41,10 @@ accordingly. */
       const posts = await response.json();
 
       const episodes = posts.filter((post) => post.type === 'episode');
-      setEpisodes(episodes);
+      const reverseOrderEpisodes = episodes
+        .sort((a, b) => parseFloat(a.number) - parseFloat(b.number))
+        .reverse();
+      setEpisodes(reverseOrderEpisodes);
 
       const writing = posts.filter((post) => post.type === 'writing');
       setWriting(writing);
