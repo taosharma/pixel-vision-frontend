@@ -11,9 +11,9 @@ const links = ['Episodes', 'Writing', 'Characters', 'Support', 'Contact'];
 function Header() {
   return (
     <main className={css.Header}>
-      <img className={css.logo} src={logo} />
       <h2 className={css.subtitle}>Tao & Ben's</h2>
       <h1 className={css.title}>Pixel Vision</h1>
+      <img className={css.logo} src={logo} />
       <NavigationBar className={css.NavigationBar} links={links} />
     </main>
   );

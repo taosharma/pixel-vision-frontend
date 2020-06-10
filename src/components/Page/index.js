@@ -4,11 +4,16 @@ import css from './Page.module.css';
 
 import PostSummary from '../PostSummary';
 
-function Page({ posts, handlePostId }) {
+function Page({ posts, handlePostIndex }) {
   return (
     <main className={css.Page}>
-      {posts.map((post) => (
-        <PostSummary post={post} handlePostId={handlePostId} />
+      {posts.map((post, index) => (
+        <PostSummary
+          post={post}
+          handlePostIndex={handlePostIndex}
+          index={index}
+          key={index}
+        />
       ))}
     </main>
   );

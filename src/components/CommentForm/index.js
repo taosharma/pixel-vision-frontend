@@ -29,7 +29,7 @@ function CommentForm() {
 
   return (
     <main className={css.CommentForm}>
-      <h3>Leave a comment:</h3>
+      <h3 className={css.commentTitle}>Leave a comment:</h3>
       <Input
         label={'Name:'}
         name={'name'}
@@ -44,7 +44,7 @@ function CommentForm() {
         maxLength={maxCommentLength.text}
         handleChange={handleChange}
       />
-      <button>Submit</button>
+      <p className={css.submit}>Submit</p>
     </main>
   );
 }
