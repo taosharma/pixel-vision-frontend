@@ -24,8 +24,9 @@
 }
 
 .subtitle {
-  padding: 0.5em;
+  padding: 0em;
   margin: 0em;
+  margin-left: 1.35em;
   font-size: 1em;
   cursor: default;
 }
@@ -33,10 +34,15 @@
 .title {
   padding: 0.2em;
   margin: 0em;
-  font-size: 3.5em;
+  font-size: 6em;
   cursor: default;
 }
 
 .NavigationBar {
   align-self: center;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: row;
 }
