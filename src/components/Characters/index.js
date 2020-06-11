@@ -6,7 +6,12 @@ function Characters({ characters }) {
   const { image1, image2, title, podcast, ben, tao } = characters;
   return (
     <article className={css.Characters}>
-      <img className={css.image} src={image1} />
+      <img
+        className={css.image}
+        src={image1}
+        alt='Two kids playing games.'
+        title='Two kids playing games.'
+      />
       <h3 className={css.title}>{title}</h3>
       {podcast.map((paragraph) => (
         <p className={css.text}>{paragraph}</p>
@@ -19,7 +24,12 @@ function Characters({ characters }) {
       {tao.map((paragraph) => (
         <p className={css.text}>{paragraph}</p>
       ))}
-      <img className={css.image} src={image2} />
+      <img
+        className={css.image}
+        src={image2}
+        alt='Two old people playing games.'
+        title='Two old people playing games.'
+      />
     </article>
   );
 }

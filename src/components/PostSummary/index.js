@@ -5,11 +5,11 @@ import css from './PostSummary.module.css';
 import { Link } from 'react-router-dom';
 
 function PostSummary({ post, index, handlePostIndex }) {
-  const { id, type, image, title, date, link, text } = post;
+  const { id, type, image, alt, title, date, link, text } = post;
 
   return (
     <main className={css.Post}>
-      <img className={css.image} src={image} />
+      <img className={css.image} src={image} alt={alt} title={alt} />
       <Link
         className={css.title}
         onClick={() => handlePostIndex(index)}

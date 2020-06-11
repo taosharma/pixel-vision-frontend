@@ -13,7 +13,7 @@ function Header() {
     <main className={css.Header}>
       <h2 className={css.subtitle}>Tao and Ben's</h2>
       <h1 className={css.title}>Pixel Vision</h1>
-      <img className={css.logo} src={logo} />
+      <img className={css.logo} src={logo} alt='Pixel Vision Logo' />
       <NavigationBar className={css.NavigationBar} links={links} />
     </main>
   );
