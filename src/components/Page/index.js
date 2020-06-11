@@ -6,7 +6,7 @@ import PostSummary from '../PostSummary';
 
 function Page({ posts, handlePostIndex }) {
   return (
-    <main className={css.Page}>
+    <main>
       {posts.map((post, index) => (
         <PostSummary
           post={post}
