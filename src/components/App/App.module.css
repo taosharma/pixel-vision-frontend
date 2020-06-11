@@ -12,6 +12,8 @@
   min-height: 60vh;
   max-width: 100%;
   background-color: #313639;
+  background-image: url(https://i.imgur.com/tkF8VG0.png);
+  background-repeat: repeat;
 }
 
 ::selection {
