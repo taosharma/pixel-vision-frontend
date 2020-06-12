@@ -11,11 +11,10 @@ const links = ['Episodes', 'Writing', 'Characters', 'Support', 'Contact'];
 function Header() {
   return (
     <main className={css.Header}>
-      <div>
+      <div className={css.headerContainer}>
         <h2 className={css.subtitle}>Ben and Tao's</h2>
         <div className={css.titleContainer}>
           <h1 className={css.title}>Pixel Vision</h1>
-          {/* <h1 className={css.title}>Vision</h1> */}
           <img className={css.logo} src={logo} alt='Pixel Vision Logo' />
         </div>
       </div>

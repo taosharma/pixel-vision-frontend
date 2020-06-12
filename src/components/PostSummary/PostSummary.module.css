@@ -15,6 +15,26 @@
   box-shadow: 0.3em -0.3em #e7e7da;
 }
 
+@media only screen and (max-width: 700px) {
+  .Post {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 1.5em;
+    margin: 2em;
+    height: auto;
+    width: 40vw;
+    min-width: 25em;
+    background-color: #f7f7f2;
+    color: #313639;
+    box-shadow: 0.3em -0.3em #e7e7da;
+    transform: scale(0.8);
+  }
+}
+
 .image {
   width: 40vw;
   min-width: 25em;
