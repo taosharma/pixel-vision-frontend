@@ -6,16 +6,18 @@ import CommentForm from '../CommentForm';
 import Comment from '../Comment';
 
 function Post({ post }) {
-  const { image, title, date, link, text, comments } = post;
+  const { image, alt, title, date, link, text, comments } = post;
   console.log(comments);
   return (
     <main className={css.container}>
       <section className={css.Post}>
-        <img className={css.image} src={image} />
+        <img className={css.image} src={image} alt={alt} title={alt} />
         <h3 className={css.title}>{title}</h3>
         <p className={css.date}>{date}</p>
-        {text.map((paragraph) => (
-          <p className={css.text}>{paragraph}</p>
+        {text.map((paragraph, index) => (
+          <p className={css.text} key={index}>
+            {paragraph}
+          </p>
         ))}
         {link && (
           <audio className={css.audio} controls>

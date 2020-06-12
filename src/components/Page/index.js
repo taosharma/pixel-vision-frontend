@@ -1,12 +1,12 @@
 import React from 'react';
 
-import css from './Page.module.css';
+// import css from './Page.module.css';
 
 import PostSummary from '../PostSummary';
 
 function Page({ posts, handlePostIndex }) {
   return (
-    <main className={css.Page}>
+    <main>
       {posts.map((post, index) => (
         <PostSummary
           post={post}

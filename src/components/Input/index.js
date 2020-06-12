@@ -13,7 +13,9 @@ function Input({ label, name, value, maxLength, handleChange }) {
         type='text'
         maxLength={maxLength}
       ></textarea>
-      <p>Characters remaining: {maxLength - value.length}</p>
+      <p className={css.charactersRemaining}>
+        Characters remaining: {maxLength - value.length}
+      </p>
     </section>
   );
 }
