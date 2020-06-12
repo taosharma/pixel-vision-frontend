@@ -28,6 +28,23 @@
   width: 50vw;
 }
 
+.commentContainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 1.5em;
+  margin: 2em;
+  height: auto;
+  width: 40vw;
+  min-width: 25em;
+  background-color: #313639;
+  color: #e7e7da;
+  box-shadow: 0.3em -0.3em #26292c;
+}
+
 .image {
   width: 40vw;
   min-width: 25em;
@@ -75,4 +92,11 @@ audio:focus {
   align-self: flex-start;
   text-align: justify;
   text-justify: inter-word;
+}
+
+.commentTitle {
+  font-size: 1.5em;
+  margin-top: 0em;
+  margin-bottom: 0.5em;
+  color: #e7e7da;
 }

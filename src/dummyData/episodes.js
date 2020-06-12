@@ -1,5 +1,3 @@
-import comments from './comments';
-
 const exampleEpisodes = [
   {
     id: 0,
@@ -12,7 +10,7 @@ const exampleEpisodes = [
     text: [
       `There's a lot to commend about Alien: Isolation, particularly given that it was released in 2014. Playing it now, I'm conscious there are another 6 years of gaming developments skewing my reactions and assumptions and watering down its achievements. That said, I want to convey how it feels to play today, not reiterate how impressive it might have been for its time.`,
     ],
-    comments: comments,
+    comments: [],
   },
   {
     id: 1,
@@ -25,7 +23,7 @@ const exampleEpisodes = [
     text: [
       `There's a lot to commend about Alien: Isolation, particularly given that it was released in 2014. Playing it now, I'm conscious there are another 6 years of gaming developments skewing my reactions and assumptions and watering down its achievements. That said, I want to convey how it feels to play today, not reiterate how impressive it might have been for its time.`,
     ],
-    comments: comments,
+    comments: [],
   },
   {
     id: 2,
@@ -38,7 +36,7 @@ const exampleEpisodes = [
     text: [
       `There's a lot to commend about Alien: Isolation, particularly given that it was released in 2014. Playing it now, I'm conscious there are another 6 years of gaming developments skewing my reactions and assumptions and watering down its achievements. That said, I want to convey how it feels to play today, not reiterate how impressive it might have been for its time.`,
     ],
-    comments: comments,
+    comments: [],
   },
 ];
 

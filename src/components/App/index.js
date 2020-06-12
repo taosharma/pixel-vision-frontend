@@ -55,12 +55,12 @@ accordingly. */
     fetchPosts();
   }, []);
 
-  // The submitComment function makes a PATCH request to the pixelVisionTable table to update the comments on a specific post.
+  // The submitComment function makes a PATCH request to the pixelVisionTable table to update the comments for a specific post.
 
   async function submitComment(postId, comments) {
-    console.log(comments);
     const updatedComments = { comments: comments };
-    const response = await fetch(
+
+    await fetch(
       `https://8dqjmptiu8.execute-api.eu-west-1.amazonaws.com/dev/id/${postId}`,
       {
         method: 'PATCH',
@@ -75,7 +75,8 @@ accordingly. */
         body: JSON.stringify(updatedComments),
       }
     );
-    console.log(response);
+
+    window.location.reload();
   }
 
   // State that tracks the id of the post to be shown on /episodes or /writing

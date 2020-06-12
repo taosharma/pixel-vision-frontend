@@ -18,16 +18,16 @@ function Post({ post, submitComment }) {
             {paragraph}
           </p>
         ))}
-        {link && (
-          <audio className={css.audio} controls>
-            <source src={link}></source>
-          </audio>
-        )}
+        {link && <audio className={css.audio} src={link} controls></audio>}
       </section>
-      {comments &&
-        comments.map((comment, index) => (
-          <Comment comment={comment} key={index} />
-        ))}
+      {comments.length > 0 && (
+        <section className={css.commentContainer}>
+          <h3 className={css.commentTitle}>Comments:</h3>
+          {comments.map((comment, index) => (
+            <Comment comment={comment} index={index} key={index} />
+          ))}
+        </section>
+      )}
       <CommentForm
         submitComment={submitComment}
         postId={id}
