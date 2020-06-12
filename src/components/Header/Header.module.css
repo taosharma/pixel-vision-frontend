@@ -6,7 +6,7 @@
   align-items: center;
   align-content: center;
   width: 100vw;
-  height: 40vh;
+  height: 38vh;
   max-height: 40vh;
   max-width: 100%;
   background-color: #f45b69;
@@ -26,13 +26,14 @@
 .subtitle {
   padding: 0em;
   margin: 0em;
-  margin-left: 1.35em;
+  margin-left: 1.6em;
   font-size: 1em;
   cursor: default;
 }
 
 .title {
   padding: 0.2em;
+  padding-top: 0em;
   margin: 0em;
   font-size: 6em;
   cursor: default;
