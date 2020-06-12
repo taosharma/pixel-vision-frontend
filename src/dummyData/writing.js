@@ -24,6 +24,7 @@ const exampleWriting = [
       `Alien: Isolation will present challenges that seem insurmountable, but with a combination of persistence and luck, you'll stumble through if you keep trying hard enough, and it's rewarding in the end. In some ways, this is a flaw with all games depicting a survivor fighting tooth and nail through hell to make it out the other side. They never are survivors. The game forces you to die over and over, and it's only through Edge of Tomorrow-like tactics and resilience and Groundhog Day zen that you are able to triumph (relatively) unscathed. Yet, despite knowing things are only ever as bad as your last save, when all's said and done, Alien: Isolation is an intense experience, and certainly a riveting one, an accomplishment that despite its many flaws, has to be considered a success.`,
       `Finishing at last, I recalled a moment early on when I first picked up the flame thrower, how the game advised that the Alien would briefly flee if bathed in fire, and how I complacently thought to myself, 'huh, who needs a flamethrower? I've dodged it easily enough this far.' Now I sit trembling, both rueful and gleeful at my naivety. What a journey it's been.`,
     ],
+    comments: [],
   },
 ];
 

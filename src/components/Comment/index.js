@@ -7,9 +7,9 @@ function Comment({ comment }) {
 
   return (
     <article className={css.Comment}>
-      <h3 className={css.name}>{name}</h3>
-      <h4 className={css.date}>{date}</h4>
+      <h3 className={css.name}>{name} says:</h3>
       <p className={css.text}>{text}</p>
+      <h4 className={css.date}>Posted on {date}</h4>
     </article>
   );
 }
