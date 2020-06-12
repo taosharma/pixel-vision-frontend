@@ -55,6 +55,29 @@ accordingly. */
     fetchPosts();
   }, []);
 
+  // The submitComment function makes a PATCH request to the pixelVisionTable table to update the comments on a specific post.
+
+  async function submitComment(postId, comments) {
+    console.log(comments);
+    const updatedComments = { comments: comments };
+    const response = await fetch(
+      `https://8dqjmptiu8.execute-api.eu-west-1.amazonaws.com/dev/id/${postId}`,
+      {
+        method: 'PATCH',
+        mode: 'cors',
+        cache: 'no-cache',
+        credentials: 'same-origin',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        redirect: 'follow',
+        referrerPolicy: 'no-referrer',
+        body: JSON.stringify(updatedComments),
+      }
+    );
+    console.log(response);
+  }
+
   // State that tracks the id of the post to be shown on /episodes or /writing
 
   const [postIndex, setPostIndex] = useState(0);
@@ -82,13 +105,13 @@ accordingly. */
             <Characters characters={characters} />
           </Route>
           <Route path='/writing/:id'>
-            <Post post={writing[postIndex]} />
+            <Post post={writing[postIndex]} submitComment={submitComment} />
           </Route>
           <Route path='/writing'>
             <Page posts={writing} handlePostIndex={handlePostIndex} />
           </Route>
           <Route path='/episode/:id'>
-            <Post post={episodes[postIndex]} />
+            <Post post={episodes[postIndex]} submitComment={submitComment} />
           </Route>
           <Route path='/'>
             <Page posts={episodes} handlePostIndex={handlePostIndex} />

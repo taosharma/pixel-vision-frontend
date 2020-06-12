@@ -14,8 +14,8 @@ const maxCommentLength = {
   text: 5000,
 };
 
-function CommentForm() {
-  const [comment, setComment] = useState({
+function CommentForm({ submitComment, postId, comments }) {
+  const [newComment, setNewComment] = useState({
     name: '',
     date: getDateString(),
     text: '',
@@ -24,7 +24,14 @@ function CommentForm() {
   function handleChange(event) {
     const input = event.target.value;
     const name = event.target.name;
-    setComment({ ...comment, [name]: input });
+    setNewComment({ ...newComment, [name]: input });
+  }
+
+  function handleSubmit() {
+    if (newComment.name && newComment.text) {
+      comments.push(newComment);
+      submitComment(postId, comments);
+    }
   }
 
   return (
@@ -33,18 +40,20 @@ function CommentForm() {
       <Input
         label={'Name:'}
         name={'name'}
-        value={comment.name}
+        value={newComment.name}
         maxLength={maxCommentLength.name}
         handleChange={handleChange}
       />
       <Input
         label={'Comment:'}
         name={'text'}
-        value={comment.text}
+        value={newComment.text}
         maxLength={maxCommentLength.text}
         handleChange={handleChange}
       />
-      <p className={css.submit}>Submit</p>
+      <p className={css.submit} onClick={() => handleSubmit()}>
+        Submit
+      </p>
     </main>
   );
 }

@@ -5,9 +5,8 @@ import css from './Post.module.css';
 import CommentForm from '../CommentForm';
 import Comment from '../Comment';
 
-function Post({ post }) {
-  const { image, alt, title, date, link, text, comments } = post;
-  console.log(comments);
+function Post({ post, submitComment }) {
+  const { id, image, alt, title, date, link, text, comments } = post;
   return (
     <main className={css.container}>
       <section className={css.Post}>
@@ -25,8 +24,15 @@ function Post({ post }) {
           </audio>
         )}
       </section>
-      {comments && comments.map((comment) => <Comment comment={comment} />)}
-      <CommentForm />
+      {comments &&
+        comments.map((comment, index) => (
+          <Comment comment={comment} key={index} />
+        ))}
+      <CommentForm
+        submitComment={submitComment}
+        postId={id}
+        comments={comments}
+      />
     </main>
   );
 }
