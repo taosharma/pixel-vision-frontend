@@ -1,7 +1,7 @@
 const characters = {
   image1: 'https://i.imgur.com/mhUpCZs.jpg',
   image2: 'https://i.imgur.com/8ZXgNyF.jpg',
-  title: 'The Friendship',
+  title: 'The Backstory',
   podcast: [
     `'The reason we're doing this podcast is because whenever we get together and we talk about games; we talk about games for about an hour, and then we say, "I wish we'd recorded that." So this is just us, having a conversation about games, that we've actually recorded.' - Tao, Ep. 1: Disco Elysium.`,
     `Ben and Tao met in front of an Xbox in the early noughties. In the decades since, they've spent nearly as much time talking about games as playing them.`,
