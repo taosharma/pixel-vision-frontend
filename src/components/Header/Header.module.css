@@ -9,10 +9,9 @@
   height: 38vh;
   max-height: 40vh;
   max-width: 100%;
-  background-image: radial-gradient(circle, #0f426b, #0a2c47, #082136);
+  background-image: url(https://i.imgur.com/dJBGT8Q.png);
   padding: 0em;
   margin: 0em;
-  border-bottom: 0.1em solid #ff47f0;
   cursor: default;
 }
 
@@ -23,7 +22,7 @@
 
 .headerImage {
   height: 32vh;
-  margin-top: -2em;
+  margin-top: -1em;
 }
 
 @media only screen and (max-width: 700px) {
@@ -38,7 +37,6 @@
     background-color: #0a2c47;
     padding: 0em;
     margin: 0em;
-    border-bottom: 0.1em solid #ff47f0;
     cursor: default;
   }
   .headerImage {
@@ -59,7 +57,6 @@
     background-color: #0a2c47;
     padding: 0em;
     margin: 0em;
-    border-bottom: 0.1em solid #ff47f0;
     cursor: default;
   }
 
@@ -81,7 +78,6 @@
     background-color: #0a2c47;
     padding: 0em;
     margin: 0em;
-    border-bottom: 0.1em solid #ff47f0;
     cursor: default;
   }
 

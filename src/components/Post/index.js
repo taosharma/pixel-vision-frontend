@@ -43,7 +43,7 @@ function Post({ post, submitComment }) {
           <audio className={css.audio} src={audioLink} controls></audio>
         )}
         {text.audioExtracts.length > 0 && (
-          <div className={css.audioExtracts}>
+          <div className={css.text}>
             <p>Audio Extracts:</p>
             <ul>
               {text.audioExtracts.map((audioExtract, index) => (
@@ -53,7 +53,7 @@ function Post({ post, submitComment }) {
           </div>
         )}
         {text.clarifications.length > 0 && (
-          <div>
+          <div className={css.text}>
             <p>Clarifications:</p>
             <ol>
               {text.clarifications.map((clarification, index) => (
@@ -63,7 +63,7 @@ function Post({ post, submitComment }) {
           </div>
         )}
         {text.contentWarning.length > 0 && (
-          <div>
+          <div className={css.text}>
             <p>{text.contentWarning[0]}</p>
           </div>
         )}

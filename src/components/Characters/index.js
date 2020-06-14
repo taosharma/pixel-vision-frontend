@@ -25,8 +25,10 @@ function Characters({ characters }) {
         </p>
       ))}
       <h3 className={css.title}>Tao</h3>
-      {tao.map((paragraph) => (
-        <p className={css.text}>{paragraph}</p>
+      {tao.map((paragraph, index) => (
+        <p className={css.text} key={index}>
+          {paragraph}
+        </p>
       ))}
       <img
         className={css.image}

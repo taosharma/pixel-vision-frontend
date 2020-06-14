@@ -102,11 +102,6 @@ audio:focus {
   text-justify: inter-word;
 }
 
-.audioExtracts {
-  align-self: flex-start;
-  justify-self: flex-start;
-}
-
 .commentTitle {
   font-size: 1.5em;
   margin-top: 0em;
