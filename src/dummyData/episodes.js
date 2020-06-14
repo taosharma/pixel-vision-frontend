@@ -32,7 +32,11 @@ const exampleEpisodes = [
         'PEGI 16. Strong language. Reference to drugs, violence and discrimination.',
       ],
     },
-    comments: [],
+    comments: [
+      { date: '10 Jan 2020', name: 'Tao', text: 'Testing the comments, yo.' },
+      { date: '10 Jan 2020', name: 'Tao', text: 'Testing the comments, yo.' },
+      { date: '10 Jan 2020', name: 'Tao', text: 'Testing the comments, yo.' },
+    ],
   },
 ];
 
