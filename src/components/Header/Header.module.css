@@ -69,13 +69,6 @@
   }
 }
 
-@media only screen and (max-width: 350px) {
-  .headerImage {
-    height: 15vh;
-    margin-top: 0;
-  }
-}
-
 @media only screen and (max-width: 260px) {
   .Header {
     display: flex;
