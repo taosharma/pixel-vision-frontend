@@ -71,6 +71,35 @@
 
 @media only screen and (max-width: 350px) {
   .headerImage {
+    height: 15vh;
+    margin-top: 0;
+  }
+}
+
+@media only screen and (max-width: 260px) {
+  .Header {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 38vh;
+    max-height: 40vh;
+    max-width: 100%;
+    background-color: #0a2c47;
+    padding: 0em;
+    margin: 0em;
+    border-bottom: 0.1em solid #ff47f0;
+    cursor: default;
+  }
+
+  .headerImage {
+    height: 20vh;
+    margin-top: 0;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .headerImage {
     height: 10vh;
     margin-top: 0;
   }

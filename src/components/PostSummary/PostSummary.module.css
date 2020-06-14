@@ -152,3 +152,37 @@ audio:focus {
     transform: scale(0.6);
   }
 }
+
+@media only screen and (max-width: 260px) {
+  .Post {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 1.5em;
+    margin: 2em;
+    height: auto;
+    width: 30vw;
+    min-width: 10em;
+    background-color: #f7f7f2;
+    color: #313639;
+    box-shadow: 0.3em -0.3em #e7e7da;
+  }
+
+  .image {
+    width: 5vw;
+    min-width: 11em;
+    height: auto;
+  }
+
+  .audio {
+    padding: 0.2em;
+    margin: 0.8em;
+    align-self: center;
+    background-color: #313639;
+    border-radius: 30px;
+    transform: scale(0.6);
+  }
+}
