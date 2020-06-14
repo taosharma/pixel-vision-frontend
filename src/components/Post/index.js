@@ -11,7 +11,7 @@ function Post({ post, submitComment }) {
     <main className={css.container}>
       <section className={css.Post}>
         <img
-          className={css.image}
+          className={css.headerImage}
           src={headerImage.image}
           alt={headerImage.alt}
           title={headerImage.alt}
@@ -29,9 +29,7 @@ function Post({ post, submitComment }) {
                   title={images[index].alt}
                   key={index}
                 />
-                <p className={css.text} key={index}>
-                  {paragraph}
-                </p>
+                <p className={css.text}>{paragraph}</p>
               </div>
             );
           } else
@@ -44,24 +42,29 @@ function Post({ post, submitComment }) {
         {audioLink && (
           <audio className={css.audio} src={audioLink} controls></audio>
         )}
-        {text.audioExtracts && (
-          <div>
+        {text.audioExtracts.length > 0 && (
+          <div className={css.audioExtracts}>
             <p>Audio Extracts:</p>
             <ul>
-              {text.audioExtracts.map((audioExtract) => (
-                <li>{audioExtract}</li>
+              {text.audioExtracts.map((audioExtract, index) => (
+                <li key={index}>{audioExtract}</li>
               ))}
             </ul>
           </div>
         )}
-        {text.clarifications && (
+        {text.clarifications.length > 0 && (
           <div>
             <p>Clarifications:</p>
             <ol>
-              {text.clarifications.map((clarification) => (
-                <li>{clarification}</li>
+              {text.clarifications.map((clarification, index) => (
+                <li key={index}>{clarification}</li>
               ))}
             </ol>
+          </div>
+        )}
+        {text.contentWarning.length > 0 && (
+          <div>
+            <p>{text.contentWarning[0]}</p>
           </div>
         )}
       </section>

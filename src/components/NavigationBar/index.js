@@ -10,7 +10,7 @@ const defaultActive = [
   { link: 'episodes', active: false },
   { link: 'writing', active: false },
   { link: 'characters', active: false },
-  { link: 'support', active: false },
+  { link: 'patreon', active: false },
   { link: 'contact', active: false },
 ];
 
@@ -38,7 +38,7 @@ function NavigationBar({ links }) {
   // The handleHistory function redirects the browser to the linked page.
 
   function handleHistory(link) {
-    if (link === 'support') {
+    if (link === 'patreon') {
       window.location.href = 'https://www.patreon.com';
     } else if (link === 'episodes') {
       history.push(`/`);
