@@ -11,6 +11,7 @@
   margin-left: 1em;
   margin-right: 1em;
   font-size: 1em;
+  font-weight: bold;
   transition: 0.3s;
   cursor: default;
 }
@@ -21,15 +22,16 @@
   margin-left: 1em;
   margin-right: 1em;
   font-size: 1em;
-  background-color: #f7f7f2;
-  color: #313639;
+  font-weight: bold;
+  background-color: #ff47f0;
+  color: #efefe6;
   cursor: default;
   transform: scale(1.2);
 }
 
 .navigationLink:hover {
-  background-color: #f7f7f2;
-  color: #313639;
+  background-color: #ff47f0;
+  color: #efefe6;
   transform: scale(1.2);
   transition: 0.3s;
 }
@@ -41,5 +43,45 @@
     justify-content: flex-start;
     align-self: flex-start;
     transform: scale(0.8);
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .NavigationBar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-self: flex-start;
+  }
+
+  .navigationLink {
+    padding: 0.5em;
+    margin: 0.5em;
+    margin-left: 1em;
+    margin-right: 1em;
+    font-size: 0.8em;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: default;
+  }
+
+  .activeNavigationLink {
+    padding: 0.5em;
+    margin: 0.5em;
+    margin-left: 1em;
+    margin-right: 1em;
+    font-size: 0.8em;
+    font-weight: bold;
+    background-color: #ff47f0;
+    color: #efefe6;
+    cursor: default;
+    transform: scale(1.2);
+  }
+
+  .navigationLink:hover {
+    background-color: #ff47f0;
+    color: #efefe6;
+    transform: scale(1.2);
+    transition: 0.3s;
   }
 }

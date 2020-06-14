@@ -85,13 +85,14 @@ audio:focus {
 }
 
 .readMore {
-  background-color: #f45b69;
-  color: #f7f7f2;
+  background-color: #ff47f0;
+  color: #efefe6;
   padding: 0.5em;
   margin: 1em;
   margin-bottom: 0em;
   font-size: 1em;
   font-style: normal;
+  font-weight: bold;
   text-decoration: solid;
   align-self: center;
   transition: 0.3s;
