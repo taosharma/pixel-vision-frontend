@@ -32,28 +32,28 @@ function App() {
   /*   This useEffect runs a fetch to the pixelVisionTable database when the website loads, and sets the episodes and writing state 
 accordingly. */
 
-  useEffect(() => {
-    async function fetchPosts() {
-      const response = await fetch(
-        'https://8dqjmptiu8.execute-api.eu-west-1.amazonaws.com/dev/'
-      );
+  // useEffect(() => {
+  //   async function fetchPosts() {
+  //     const response = await fetch(
+  //       'https://8dqjmptiu8.execute-api.eu-west-1.amazonaws.com/dev/'
+  //     );
 
-      const posts = await response.json();
+  //     const posts = await response.json();
 
-      const episodes = posts.filter((post) => post.type === 'episode');
-      const reverseOrderEpisodes = episodes
-        .sort((a, b) => parseFloat(a.number) - parseFloat(b.number))
-        .reverse();
-      setEpisodes(reverseOrderEpisodes);
+  //     const episodes = posts.filter((post) => post.type === 'episode');
+  //     const reverseOrderEpisodes = episodes
+  //       .sort((a, b) => parseFloat(a.number) - parseFloat(b.number))
+  //       .reverse();
+  //     setEpisodes(reverseOrderEpisodes);
 
-      const writing = posts.filter((post) => post.type === 'writing');
-      const reverseOrderWriting = writing
-        .sort((a, b) => parseFloat(a.number) - parseFloat(b.number))
-        .reverse();
-      setWriting(reverseOrderWriting);
-    }
-    fetchPosts();
-  }, []);
+  //     const writing = posts.filter((post) => post.type === 'writing');
+  //     const reverseOrderWriting = writing
+  //       .sort((a, b) => parseFloat(a.number) - parseFloat(b.number))
+  //       .reverse();
+  //     setWriting(reverseOrderWriting);
+  //   }
+  //   fetchPosts();
+  // }, []);
 
   // The submitComment function makes a PATCH request to the pixelVisionTable table to update the comments for a specific post.
 
