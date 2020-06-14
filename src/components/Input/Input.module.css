@@ -17,8 +17,37 @@
 textarea {
   padding: 0.5em;
   font-family: inherit;
-  max-width: 25vw;
   max-height: 20vh;
-  min-width: 25vw;
+  min-width: 25em;
   min-height: 5vh;
+}
+
+@media only screen and (max-width: 500px) {
+  textarea {
+    padding: 0.5em;
+    font-family: inherit;
+    max-height: 20vh;
+    min-width: 15em;
+    min-height: 5vh;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  textarea {
+    padding: 0.5em;
+    font-family: inherit;
+    max-height: 20vh;
+    min-width: 10em;
+    min-height: 5vh;
+  }
+}
+
+@media only screen and (max-width: 260px) {
+  textarea {
+    padding: 0.5em;
+    font-family: inherit;
+    max-height: 20vh;
+    min-width: 5em;
+    min-height: 5vh;
+  }
 }

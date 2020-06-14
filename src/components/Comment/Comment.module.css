@@ -4,6 +4,7 @@
   flex-wrap: wrap;
   height: auto;
   width: 35vw;
+  min-width: 22em;
   padding: 1em;
   margin: 0.5em;
   background-color: #f7f7f2;
@@ -26,4 +27,52 @@
 .text {
   padding: 0.2em;
   margin: 0.2em;
+}
+
+@media only screen and (max-width: 500px) {
+  .Comment {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: auto;
+    width: 35vw;
+    min-width: 12em;
+    padding: 1em;
+    margin: 0.5em;
+    background-color: #f7f7f2;
+    color: #313639;
+    border: 0.25em solid #313639;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .Comment {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: auto;
+    width: 35vw;
+    min-width: 8em;
+    padding: 1em;
+    margin: 0.5em;
+    background-color: #f7f7f2;
+    color: #313639;
+    border: 0.25em solid #313639;
+  }
+}
+
+@media only screen and (max-width: 260px) {
+  .Comment {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: auto;
+    width: 35vw;
+    min-width: 5em;
+    padding: 1em;
+    margin: 0.5em;
+    background-color: #f7f7f2;
+    color: #313639;
+    border: 0.25em solid #313639;
+  }
 }

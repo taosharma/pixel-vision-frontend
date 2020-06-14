@@ -9,41 +9,91 @@
   height: 38vh;
   max-height: 40vh;
   max-width: 100%;
-  background-color: #f45b69;
+  background-image: radial-gradient(circle, #0f426b, #0a2c47, #082136);
   padding: 0em;
   margin: 0em;
-  border-bottom: 0.25em solid #f7f7f2;
+  border-bottom: 0.1em solid #ff47f0;
   cursor: default;
 }
 
-.logo {
-  padding: 0.5em;
-  margin: 0;
-  width: auto;
-  height: 15vh;
+.headerContainer {
+  width: 40vw;
+  height: 38vh;
 }
 
-.subtitle {
-  padding: 0em;
-  margin: 0em;
-  margin-left: 1.6em;
-  font-size: 1em;
-  cursor: default;
+.headerImage {
+  height: 32vh;
+  margin-top: -2em;
 }
 
-.title {
-  padding: 0.2em;
-  padding-top: 0em;
-  margin: 0em;
-  font-size: 6em;
-  cursor: default;
+@media only screen and (max-width: 700px) {
+  .Header {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 38vh;
+    max-height: 40vh;
+    max-width: 100%;
+    background-color: #0a2c47;
+    padding: 0em;
+    margin: 0em;
+    border-bottom: 0.1em solid #ff47f0;
+    cursor: default;
+  }
+  .headerImage {
+    height: 25vh;
+    margin-top: -2em;
+  }
 }
 
-.NavigationBar {
-  align-self: center;
+@media only screen and (max-width: 450px) {
+  .Header {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 38vh;
+    max-height: 40vh;
+    max-width: 100%;
+    background-color: #0a2c47;
+    padding: 0em;
+    margin: 0em;
+    border-bottom: 0.1em solid #ff47f0;
+    cursor: default;
+  }
+
+  .headerImage {
+    height: 20vh;
+    margin-top: 0;
+  }
 }
 
-.titleContainer {
-  display: flex;
-  flex-direction: row;
+@media only screen and (max-width: 260px) {
+  .Header {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 38vh;
+    max-height: 40vh;
+    max-width: 100%;
+    background-color: #0a2c47;
+    padding: 0em;
+    margin: 0em;
+    border-bottom: 0.1em solid #ff47f0;
+    cursor: default;
+  }
+
+  .headerImage {
+    height: 20vh;
+    margin-top: 0;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .headerImage {
+    height: 10vh;
+    margin-top: 0;
+  }
 }

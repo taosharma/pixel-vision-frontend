@@ -2,8 +2,6 @@ import React from 'react';
 
 import css from './Header.module.css';
 
-import logo from './super-mario.png';
-
 import NavigationBar from '../NavigationBar';
 
 const links = ['Episodes', 'Writing', 'Characters', 'Support', 'Contact'];
@@ -11,14 +9,13 @@ const links = ['Episodes', 'Writing', 'Characters', 'Support', 'Contact'];
 function Header() {
   return (
     <main className={css.Header}>
-      <div>
-        <h2 className={css.subtitle}>Ben and Tao's</h2>
-        <div className={css.titleContainer}>
-          <h1 className={css.title}>Pixel Vision</h1>
-          {/* <h1 className={css.title}>Vision</h1> */}
-          <img className={css.logo} src={logo} alt='Pixel Vision Logo' />
-        </div>
-      </div>
+      <img
+        className={css.headerImage}
+        src={'https://i.imgur.com/nFXLGyE.png?1'}
+        alt={
+          'A silloute of two people watching a pixellated screen, and the words: "Pixel Vision"'
+        }
+      ></img>
       <NavigationBar className={css.NavigationBar} links={links} />
     </main>
   );
