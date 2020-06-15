@@ -3,7 +3,7 @@ const exampleEpisodes = [
     id: 'an-example-post',
     type: 'episode',
     headerImage: {
-      image: 'https://i.imgur.com/cRSW6ar.jpg',
+      image: 'https://i.imgur.com/MF9Mf2e.jpg?1',
       alt: 'A description of the header image.',
     },
     images: {
