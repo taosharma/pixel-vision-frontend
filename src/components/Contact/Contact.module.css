@@ -90,6 +90,18 @@
     align-self: flex-start;
   }
 
+  .email {
+    padding: 0.5em;
+    padding-left: 0em;
+    margin: 0em;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 1em;
+    color: #313639;
+    text-decoration: solid;
+    align-self: flex-start;
+  }
+
   .text {
     padding: 1em;
     padding-left: 0em;
@@ -182,5 +194,39 @@
     width: 5vw;
     min-width: 11em;
     height: auto;
+  }
+
+  .email {
+    padding: 0.5em;
+    padding-left: 0em;
+    margin: 0em;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 0.5em;
+    color: #313639;
+    text-decoration: solid;
+    align-self: flex-start;
+  }
+
+  .title {
+    padding: 0.5em;
+    padding-left: 0em;
+    margin: 0em;
+    font-weight: bolder;
+    font-style: normal;
+    font-size: 1em;
+    color: #313639;
+    text-decoration: solid;
+    align-self: flex-start;
+  }
+
+  .text {
+    padding: 1em;
+    padding-left: 0em;
+    margin: 0em;
+    font-size: 0.8em;
+    align-self: flex-start;
+    text-align: justify;
+    text-justify: inter-word;
   }
 }
