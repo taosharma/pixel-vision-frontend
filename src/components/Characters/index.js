@@ -4,7 +4,9 @@ import css from './Characters.module.css';
 
 import { useParams } from 'react-router-dom';
 
-function Characters({ characters }) {
+import characters from '../../dummyData/characters';
+
+function Characters() {
   const { image1, image2, title, podcast, ben, tao } = characters;
 
   let { params } = useParams();

@@ -18,8 +18,6 @@ import Post from '../Post';
 
 import exampleEpisodes from '../../dummyData/episodes';
 import exampleWriting from '../../dummyData/writing';
-import characters from '../../dummyData/characters';
-import contact from '../../dummyData/contact';
 
 // App component:
 
@@ -99,10 +97,10 @@ accordingly. */
         <Header />
         <Switch>
           <Route path='/contact'>
-            <Contact contact={contact} />
+            <Contact />
           </Route>
           <Route path='/characters'>
-            <Characters characters={characters} />
+            <Characters />
           </Route>
           <Route path='/writing/:postId'>
             <Post post={writing[postIndex]} submitComment={submitComment} />
