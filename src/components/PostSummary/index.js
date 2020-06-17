@@ -25,7 +25,13 @@ function PostSummary({ post, index, handlePostIndex }) {
       <p className={css.date}>{text.date}</p>
       <p className={css.text}>{text.summary}</p>
       {audioLink && (
-        <audio className={css.audio} src={audioLink} controls></audio>
+        <iframe
+          src={audioLink}
+          seamlessHeight={'200'}
+          frameborder={'0'}
+          title={id}
+          className={css.audio}
+        ></iframe>
       )}
       <Link
         className={css.readMore}
