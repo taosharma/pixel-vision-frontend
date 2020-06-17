@@ -90,7 +90,6 @@ accordingly. */
     window.scroll({
       top: 0,
       left: 0,
-      // behavior: 'smooth',
     });
   }
 
@@ -105,13 +104,13 @@ accordingly. */
           <Route path='/characters'>
             <Characters characters={characters} />
           </Route>
-          <Route path='/writing/:id'>
+          <Route path='/writing/:postId'>
             <Post post={writing[postIndex]} submitComment={submitComment} />
           </Route>
           <Route path='/writing'>
             <Page posts={writing} handlePostIndex={handlePostIndex} />
           </Route>
-          <Route path='/episode/:id'>
+          <Route path='/episode/:postId'>
             <Post post={episodes[postIndex]} submitComment={submitComment} />
           </Route>
           <Route path='/'>

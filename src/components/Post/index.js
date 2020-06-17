@@ -1,12 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import css from './Post.module.css';
+
+import { useParams } from 'react-router-dom';
 
 import CommentForm from '../CommentForm';
 import Comment from '../Comment';
 
+import exampleEpisodes from '../../dummyData/episodes';
+
 function Post({ post, submitComment }) {
-  const { id, headerImage, images, audioLink, text, comments } = post;
+  const [thisPost, setThisPost] = useState(exampleEpisodes[0]);
+
+  let { id, headerImage, images, audioLink, text, comments } = thisPost;
+
+  let { postId } = useParams();
+
+  useEffect(() => {
+    if (id !== postId) {
+      async function fetchPosts() {
+        const response = await fetch(
+          `https://8dqjmptiu8.execute-api.eu-west-1.amazonaws.com/dev/id/${postId}`
+        );
+
+        const post = await response.json();
+        setThisPost(post);
+      }
+      fetchPosts();
+    } else setThisPost(post);
+  }, []);
+
   return (
     <main className={css.container}>
       <section className={css.Post}>
@@ -39,6 +62,11 @@ function Post({ post, submitComment }) {
               </p>
             );
         })}
+        {text.contentWarning.length > 0 && (
+          <div className={css.text}>
+            <p>{text.contentWarning[0]}</p>
+          </div>
+        )}
         {audioLink && (
           <audio className={css.audio} src={audioLink} controls></audio>
         )}
@@ -60,11 +88,6 @@ function Post({ post, submitComment }) {
                 <li key={index}>{clarification}</li>
               ))}
             </ol>
-          </div>
-        )}
-        {text.contentWarning.length > 0 && (
-          <div className={css.text}>
-            <p>{text.contentWarning[0]}</p>
           </div>
         )}
       </section>
