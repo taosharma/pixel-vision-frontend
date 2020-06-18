@@ -111,7 +111,7 @@ accordingly. */
             />
           </Route>
           <Route path='/writing'>
-            <Page posts={writing} handleCurrentPost={handleCurrentPost} />
+            <Page posts={writing} />
           </Route>
           <Route path='/episode/:postId'>
             <Post
@@ -121,7 +121,7 @@ accordingly. */
             />
           </Route>
           <Route path='/'>
-            <Page posts={episodes} handleCurrentPost={handleCurrentPost} />
+            <Page posts={episodes} />
           </Route>
         </Switch>
       </Router>

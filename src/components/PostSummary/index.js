@@ -4,7 +4,7 @@ import css from './PostSummary.module.css';
 
 import { Link } from 'react-router-dom';
 
-function PostSummary({ post, index, handleCurrentPost }) {
+function PostSummary({ post }) {
   const { id, type, headerImage, audioLink, text } = post;
 
   return (
@@ -15,11 +15,7 @@ function PostSummary({ post, index, handleCurrentPost }) {
         alt={headerImage.alt}
         title={headerImage.alt}
       />
-      <Link
-        className={css.title}
-        onClick={() => handleCurrentPost(id)}
-        to={`/${type}/${id}`}
-      >
+      <Link className={css.title} to={`/${type}/${id}`}>
         {text.title}
       </Link>
       <p className={css.date}>{text.date}</p>
@@ -27,11 +23,7 @@ function PostSummary({ post, index, handleCurrentPost }) {
       {audioLink && (
         <iframe src={audioLink} title={id} className={css.audio}></iframe>
       )}
-      <Link
-        className={css.readMore}
-        onClick={() => handleCurrentPost(id)}
-        to={`/${type}/${id}`}
-      >
+      <Link className={css.readMore} to={`/${type}/${id}`}>
         Read more
       </Link>
     </main>
