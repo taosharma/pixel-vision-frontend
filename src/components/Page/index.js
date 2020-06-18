@@ -6,7 +6,7 @@ import PostSummary from '../PostSummary';
 
 import exampleEpisodes from '../../dummyData/episodes';
 
-function Page({ posts, handlePostIndex }) {
+function Page({ posts, handleCurrentPost }) {
   const [pagePosts, setPagePosts] = useState(exampleEpisodes);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ function Page({ posts, handlePostIndex }) {
       {pagePosts.map((post, index) => (
         <PostSummary
           post={post}
-          handlePostIndex={handlePostIndex}
+          handleCurrentPost={handleCurrentPost}
           index={index}
           key={index}
         />

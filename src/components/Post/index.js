@@ -9,7 +9,7 @@ import Comment from '../Comment';
 
 import exampleEpisodes from '../../dummyData/episodes';
 
-function Post({ post, submitComment }) {
+function Post({ post, submitComment, handleCurrentPost }) {
   const [thisPost, setThisPost] = useState(exampleEpisodes[0]);
 
   let { id, headerImage, images, audioLink, text, comments } = thisPost;
@@ -18,17 +18,10 @@ function Post({ post, submitComment }) {
 
   useEffect(() => {
     if (id !== postId) {
-      async function fetchPosts() {
-        const response = await fetch(
-          `https://8dqjmptiu8.execute-api.eu-west-1.amazonaws.com/dev/id/${postId}`
-        );
-
-        const post = await response.json();
-        setThisPost(post);
-      }
-      fetchPosts();
-    } else setThisPost(post);
-  }, []);
+      handleCurrentPost(postId);
+      setThisPost(post);
+    }
+  }, [post, handleCurrentPost, id, postId]);
 
   return (
     <main className={css.container}>
