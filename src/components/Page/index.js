@@ -1,19 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 // import css from './Page.module.css';
 
 import PostSummary from '../PostSummary';
 
-function Page({ posts, handlePostIndex }) {
+import exampleEpisodes from '../../dummyData/episodes';
+
+function Page({ posts }) {
+  const [pagePosts, setPagePosts] = useState(exampleEpisodes);
+
+  useEffect(() => {
+    setPagePosts(posts);
+  }, [posts]);
+
   return (
     <main>
-      {posts.map((post, index) => (
-        <PostSummary
-          post={post}
-          handlePostIndex={handlePostIndex}
-          index={index}
-          key={index}
-        />
+      {pagePosts.map((post, index) => (
+        <PostSummary post={post} key={index} />
       ))}
     </main>
   );

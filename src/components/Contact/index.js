@@ -2,7 +2,9 @@ import React from 'react';
 
 import css from './Contact.module.css';
 
-function Contact({ contact }) {
+import contact from '../../dummyData/contact';
+
+function Contact() {
   const { image, title, email, text } = contact;
 
   return (

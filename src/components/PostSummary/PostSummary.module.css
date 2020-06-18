@@ -47,8 +47,7 @@
   padding: 0.2em;
   margin: 0.8em;
   align-self: center;
-  background-color: #313639;
-  border-radius: 30px;
+  width: 20em;
 }
 
 audio:focus {
@@ -113,9 +112,7 @@ audio:focus {
     padding: 0.2em;
     margin: 0.8em;
     align-self: center;
-    background-color: #313639;
-    border-radius: 30px;
-    transform: scale(0.8);
+    width: 15em;
   }
 
   .title {
@@ -179,9 +176,7 @@ audio:focus {
     padding: 0.2em;
     margin: 0.8em;
     align-self: center;
-    background-color: #313639;
-    border-radius: 30px;
-    transform: scale(0.6);
+    width: 15em;
   }
 }
 
@@ -213,8 +208,6 @@ audio:focus {
     padding: 0.2em;
     margin: 0.8em;
     align-self: center;
-    background-color: #313639;
-    border-radius: 30px;
-    transform: scale(0.6);
+    width: 5em;
   }
 }

@@ -1,12 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import css from './Post.module.css';
+
+import { useParams } from 'react-router-dom';
 
 import CommentForm from '../CommentForm';
 import Comment from '../Comment';
 
-function Post({ post, submitComment }) {
-  const { id, headerImage, images, audioLink, text, comments } = post;
+import exampleEpisodes from '../../dummyData/episodes';
+
+function Post({ post, submitComment, handleCurrentPost }) {
+  const [thisPost, setThisPost] = useState(exampleEpisodes[0]);
+
+  let { id, headerImage, images, audioLink, text, comments } = thisPost;
+
+  let { postId } = useParams();
+
+  useEffect(() => {
+    if (id !== postId) {
+      handleCurrentPost(postId);
+      setThisPost(post);
+    }
+  }, [post, handleCurrentPost, id, postId]);
+
   return (
     <main className={css.container}>
       <section className={css.Post}>
@@ -39,8 +55,18 @@ function Post({ post, submitComment }) {
               </p>
             );
         })}
+        {text.contentWarning.length > 0 && (
+          <div className={css.text}>
+            <p>{text.contentWarning[0]}</p>
+          </div>
+        )}
         {audioLink && (
-          <audio className={css.audio} src={audioLink} controls></audio>
+          <iframe
+            src={audioLink}
+            title={id}
+            className={css.audio}
+            frameBorder={'0'}
+          ></iframe>
         )}
         {text.audioExtracts.length > 0 && (
           <div className={css.text}>
@@ -60,11 +86,6 @@ function Post({ post, submitComment }) {
                 <li key={index}>{clarification}</li>
               ))}
             </ol>
-          </div>
-        )}
-        {text.contentWarning.length > 0 && (
-          <div className={css.text}>
-            <p>{text.contentWarning[0]}</p>
           </div>
         )}
       </section>

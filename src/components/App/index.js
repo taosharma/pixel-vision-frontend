@@ -18,14 +18,14 @@ import Post from '../Post';
 
 import exampleEpisodes from '../../dummyData/episodes';
 import exampleWriting from '../../dummyData/writing';
-import characters from '../../dummyData/characters';
-import contact from '../../dummyData/contact';
 
 // App component:
 
 function App() {
   // The episodes and writing state holds the two types of post that are listed on the website.
 
+  const [posts, setPosts] = useState(exampleEpisodes);
+  const [currentPost, setCurrentPost] = useState(exampleEpisodes[0]);
   const [episodes, setEpisodes] = useState(exampleEpisodes);
   const [writing, setWriting] = useState(exampleWriting);
 
@@ -39,6 +39,8 @@ accordingly. */
       );
 
       const posts = await response.json();
+      setPosts(posts);
+      setCurrentPost(posts[0]);
 
       const episodes = posts.filter((post) => post.type === 'episode');
       const reverseOrderEpisodes = episodes
@@ -79,19 +81,15 @@ accordingly. */
     window.location.reload();
   }
 
-  // State that tracks the id of the post to be shown on /episodes or /writing
-
-  const [postIndex, setPostIndex] = useState(0);
-
-  // The handlePostIndex changes the postIndex state to match the index of the associated post.
-
-  function handlePostIndex(index) {
-    setPostIndex(index);
-    window.scroll({
-      top: 0,
-      left: 0,
-      // behavior: 'smooth',
-    });
+  function handleCurrentPost(postId) {
+    const post = posts.find(({ id }) => id === postId);
+    if (post) {
+      setCurrentPost(post);
+      window.scroll({
+        top: 0,
+        left: 0,
+      });
+    }
   }
 
   return (
@@ -100,22 +98,30 @@ accordingly. */
         <Header />
         <Switch>
           <Route path='/contact'>
-            <Contact contact={contact} />
+            <Contact />
           </Route>
           <Route path='/characters'>
-            <Characters characters={characters} />
+            <Characters />
           </Route>
-          <Route path='/writing/:id'>
-            <Post post={writing[postIndex]} submitComment={submitComment} />
+          <Route path='/writing/:postId'>
+            <Post
+              post={currentPost}
+              submitComment={submitComment}
+              handleCurrentPost={handleCurrentPost}
+            />
           </Route>
           <Route path='/writing'>
-            <Page posts={writing} handlePostIndex={handlePostIndex} />
+            <Page posts={writing} />
           </Route>
-          <Route path='/episode/:id'>
-            <Post post={episodes[postIndex]} submitComment={submitComment} />
+          <Route path='/episode/:postId'>
+            <Post
+              post={currentPost}
+              submitComment={submitComment}
+              handleCurrentPost={handleCurrentPost}
+            />
           </Route>
           <Route path='/'>
-            <Page posts={episodes} handlePostIndex={handlePostIndex} />
+            <Page posts={episodes} />
           </Route>
         </Switch>
       </Router>

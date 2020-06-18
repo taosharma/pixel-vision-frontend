@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import css from './NavigationBar.module.css';
 
@@ -31,17 +31,11 @@ function NavigationBar({ links }) {
     ]);
   }
 
-  useEffect(() => {
-    handleActive('episodes', 0);
-  }, []);
-
   // The handleHistory function redirects the browser to the linked page.
 
   function handleHistory(link) {
     if (link === 'patreon') {
       window.location.href = 'https://www.patreon.com';
-    } else if (link === 'episodes') {
-      history.push(`/`);
     } else history.push(`/${link}`);
   }
 
