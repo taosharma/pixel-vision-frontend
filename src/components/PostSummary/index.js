@@ -21,7 +21,12 @@ function PostSummary({ post }) {
       <p className={css.date}>{text.date}</p>
       <p className={css.text}>{text.summary}</p>
       {audioLink && (
-        <iframe src={audioLink} title={id} className={css.audio}></iframe>
+        <iframe
+          src={audioLink}
+          title={id}
+          className={css.audio}
+          frameBorder={'0'}
+        ></iframe>
       )}
       <Link className={css.readMore} to={`/${type}/${id}`}>
         Read more

@@ -61,7 +61,12 @@ function Post({ post, submitComment, handleCurrentPost }) {
           </div>
         )}
         {audioLink && (
-          <audio className={css.audio} src={audioLink} controls></audio>
+          <iframe
+            src={audioLink}
+            title={id}
+            className={css.audio}
+            frameBorder={'0'}
+          ></iframe>
         )}
         {text.audioExtracts.length > 0 && (
           <div className={css.text}>
