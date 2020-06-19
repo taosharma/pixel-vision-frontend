@@ -61,6 +61,8 @@ audio:focus {
   align-self: flex-start;
   text-align: justify;
   text-justify: inter-word;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.1em;
 }
 
 .readMore {

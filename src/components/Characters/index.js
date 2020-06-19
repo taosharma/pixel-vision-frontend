@@ -2,15 +2,10 @@ import React from 'react';
 
 import css from './Characters.module.css';
 
-import { useParams } from 'react-router-dom';
-
 import characters from '../../dummyData/characters';
 
 function Characters() {
   const { image1, image2, title, podcast, ben, tao } = characters;
-
-  let { params } = useParams();
-  console.log(params);
 
   return (
     <article className={css.Characters}>
