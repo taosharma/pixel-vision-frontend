@@ -35,7 +35,7 @@ function NavigationBar({ links }) {
 
   function handleHistory(link) {
     if (link === 'patreon') {
-      window.location.href = 'https://www.patreon.com';
+      window.location.href = 'https://www.patreon.com/pixelvisionpod';
     } else history.push(`/${link}`);
   }
 
