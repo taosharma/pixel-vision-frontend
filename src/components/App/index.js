@@ -10,12 +10,7 @@ import css from './App.module.css';
 
 // Modules:
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  useLocation,
-} from 'react-router-dom';
+import { Switch, Route, useLocation } from 'react-router-dom';
 
 // Components:
 
