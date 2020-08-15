@@ -8,7 +8,7 @@ import { useHistory } from 'react-router-dom';
 
 const defaultActive = [
   { link: 'episodes', active: false },
-  { link: 'writing', active: false },
+  { link: 'reviews', active: false },
   { link: 'characters', active: false },
   { link: 'patreon', active: false },
   { link: 'contact', active: false },

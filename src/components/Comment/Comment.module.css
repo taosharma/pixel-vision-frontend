@@ -31,68 +31,30 @@
 
 @media only screen and (max-width: 500px) {
   .Comment {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    height: auto;
-    width: 35vw;
     min-width: 12em;
-    padding: 1em;
-    margin: 0.5em;
-    background-color: #f7f7f2;
-    color: #313639;
-    border: 0.25em solid #313639;
   }
 
   .name {
-    padding: 0.2em;
-    margin: 0.2em;
     font-size: 1em;
   }
 
   .date {
-    padding: 0.2em;
-    margin: 0.2em;
-    font-weight: normal;
-    font-style: italic;
     font-size: 0.8em;
   }
 
   .text {
-    padding: 0.2em;
-    margin: 0.2em;
     font-size: 0.8em;
   }
 }
 
 @media only screen and (max-width: 300px) {
   .Comment {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    height: auto;
-    width: 35vw;
     min-width: 8em;
-    padding: 1em;
-    margin: 0.5em;
-    background-color: #f7f7f2;
-    color: #313639;
-    border: 0.25em solid #313639;
   }
 }
 
 @media only screen and (max-width: 260px) {
   .Comment {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    height: auto;
-    width: 35vw;
     min-width: 5em;
-    padding: 1em;
-    margin: 0.5em;
-    background-color: #f7f7f2;
-    color: #313639;
-    border: 0.25em solid #313639;
   }
 }
