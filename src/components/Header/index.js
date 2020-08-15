@@ -4,7 +4,7 @@ import css from './Header.module.css';
 
 import NavigationBar from '../NavigationBar';
 
-const links = ['Episodes', 'Writing', 'Characters', 'Patreon', 'Contact'];
+const links = ['Episodes', 'Reviews', 'Characters', 'Patreon', 'Contact'];
 
 function Header() {
   return (

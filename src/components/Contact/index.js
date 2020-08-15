@@ -12,8 +12,8 @@ function Contact() {
       <img
         className={css.image}
         src={image}
-        alt='A letter being posted.'
-        title='A letter being posted.'
+        alt="A letter being posted."
+        title="A letter being posted."
       />
       <h3 className={css.title}>{title}</h3>
       <h4 className={css.email}>{email}</h4>

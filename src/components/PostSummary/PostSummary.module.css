@@ -12,13 +12,19 @@
   min-width: 25em;
   background-color: #f7f7f2;
   color: #313639;
-  box-shadow: 0.3em -0.3em #e7e7da;
 }
 
 .image {
   width: 40vw;
   min-width: 25em;
   height: auto;
+}
+
+.audio {
+  padding: 0.2em;
+  margin: 0.8em;
+  align-self: center;
+  width: 20em;
 }
 
 .title {
@@ -41,13 +47,6 @@
   font-weight: lighter;
   font-style: italic;
   font-size: 1.2em;
-}
-
-.audio {
-  padding: 0.2em;
-  margin: 0.8em;
-  align-self: center;
-  width: 20em;
 }
 
 audio:focus {
@@ -88,128 +87,63 @@ audio:focus {
 
 @media only screen and (max-width: 500px) {
   .Post {
-    display: flex;
-    flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    padding: 1.5em;
-    margin: 2em;
-    height: auto;
     width: 30vw;
     min-width: 15em;
-    background-color: #f7f7f2;
-    color: #313639;
-    box-shadow: 0.3em -0.3em #e7e7da;
   }
 
   .image {
     width: 10vw;
     min-width: 15em;
-    height: auto;
   }
 
   .audio {
-    padding: 0.2em;
-    margin: 0.8em;
-    align-self: center;
     width: 15em;
   }
 
   .title {
-    padding: 0.5em;
-    padding-left: 0em;
-    margin: 0em;
-    font-weight: bolder;
-    font-style: normal;
     font-size: 1em;
-    color: #313639;
-    text-decoration: solid;
-    align-self: flex-start;
   }
 
   .date {
-    padding: 0.5em;
-    padding-left: 0em;
-    margin: 0em;
-    align-self: flex-start;
-    font-weight: lighter;
-    font-style: italic;
     font-size: 0.9em;
   }
 
   .text {
-    padding: 1em;
-    padding-left: 0em;
-    margin: 0em;
     font-size: 0.8em;
-    align-self: flex-start;
-    text-align: justify;
-    text-justify: inter-word;
   }
 }
 
 @media only screen and (max-width: 300px) {
   .Post {
-    display: flex;
-    flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    padding: 1.5em;
-    margin: 2em;
-    height: auto;
     width: 30vw;
     min-width: 12em;
-    background-color: #f7f7f2;
-    color: #313639;
-    box-shadow: 0.3em -0.3em #e7e7da;
   }
 
   .image {
     width: 5vw;
     min-width: 11em;
-    height: auto;
   }
 
   .audio {
-    padding: 0.2em;
-    margin: 0.8em;
-    align-self: center;
     width: 15em;
   }
 }
 
 @media only screen and (max-width: 260px) {
   .Post {
-    display: flex;
-    flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    padding: 1.5em;
-    margin: 2em;
-    height: auto;
     width: 30vw;
     min-width: 10em;
-    background-color: #f7f7f2;
-    color: #313639;
-    box-shadow: 0.3em -0.3em #e7e7da;
   }
 
   .image {
     width: 5vw;
     min-width: 11em;
-    height: auto;
   }
 
   .audio {
-    padding: 0.2em;
-    margin: 0.8em;
-    align-self: center;
     width: 5em;
   }
 }

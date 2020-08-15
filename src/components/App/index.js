@@ -1,10 +1,21 @@
+//TODO: Remove box shadow for Ben
+//TODO: Change 'writing' to 'reviews'
+//TODO: Add google analytics.
+
 import React, { useState, useEffect } from 'react';
+
+import ReactGA from 'react-ga';
 
 import css from './App.module.css';
 
 // Modules:
 
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useLocation,
+} from 'react-router-dom';
 
 // Components:
 
@@ -19,9 +30,26 @@ import Post from '../Post';
 import exampleEpisodes from '../../dummyData/episodes';
 import exampleWriting from '../../dummyData/writing';
 
+// The usePageViews function uses sets up a useEffect that sends data to google analytics when a page is viewed.
+
+ReactGA.initialize('UA-175510184-');
+
+function usePageViews() {
+  let location = useLocation();
+
+  useEffect(() => {
+    ReactGA.set({ page: location.pathname });
+    ReactGA.pageview(location.pathname);
+  }, [location]);
+}
+
 // App component:
 
 function App() {
+  // Calls the usePageViews function to setup google analytics tracking.
+
+  usePageViews();
+
   // The episodes and writing state holds the two types of post that are listed on the website.
 
   const [posts, setPosts] = useState(exampleEpisodes);
@@ -94,37 +122,35 @@ accordingly. */
 
   return (
     <section className={css.App}>
-      <Router>
-        <Header />
-        <Switch>
-          <Route path='/contact'>
-            <Contact />
-          </Route>
-          <Route path='/characters'>
-            <Characters />
-          </Route>
-          <Route path='/writing/:postId'>
-            <Post
-              post={currentPost}
-              submitComment={submitComment}
-              handleCurrentPost={handleCurrentPost}
-            />
-          </Route>
-          <Route path='/writing'>
-            <Page posts={writing} />
-          </Route>
-          <Route path='/episode/:postId'>
-            <Post
-              post={currentPost}
-              submitComment={submitComment}
-              handleCurrentPost={handleCurrentPost}
-            />
-          </Route>
-          <Route path='/'>
-            <Page posts={episodes} />
-          </Route>
-        </Switch>
-      </Router>
+      <Header />
+      <Switch>
+        <Route path="/contact">
+          <Contact />
+        </Route>
+        <Route path="/characters">
+          <Characters />
+        </Route>
+        <Route path="/writing/:postId">
+          <Post
+            post={currentPost}
+            submitComment={submitComment}
+            handleCurrentPost={handleCurrentPost}
+          />
+        </Route>
+        <Route path="/reviews">
+          <Page posts={writing} />
+        </Route>
+        <Route path="/episode/:postId">
+          <Post
+            post={currentPost}
+            submitComment={submitComment}
+            handleCurrentPost={handleCurrentPost}
+          />
+        </Route>
+        <Route path="/">
+          <Page posts={episodes} />
+        </Route>
+      </Switch>
     </section>
   );
 }
