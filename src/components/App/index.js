@@ -33,7 +33,6 @@ function usePageViews() {
   let location = useLocation();
 
   useEffect(() => {
-    ReactGA.set({ page: location.pathname });
     ReactGA.pageview(location.pathname);
   }, [location]);
 }
