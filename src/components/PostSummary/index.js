@@ -1,6 +1,5 @@
 import React from 'react';
 
-import escapeHtml from 'escape-html';
 import Linkify from 'react-linkify';
 
 import css from './PostSummary.module.css';
