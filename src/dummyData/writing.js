@@ -28,7 +28,8 @@ const exampleWriting = [
     text: {
       title: 'Episode Number - Game Title',
       date: '10 January 2010',
-      summary: `There's a lot to commend about Alien: Isolation, particularly given that it was released in 2014. Playing it now, I'm conscious there are another 6 years of gaming developments skewing my reactions and assumptions and watering down its achievements. That said, I want to convey how it feels to play today, not reiterate how impressive it might have been for its time.`,
+      summary:
+        "There's a lot to commend about <a href='https://www.pixelvision.net'>Pixel Vision</a> , particularly given that it was released in 2014. Playing it now, I'm conscious there are another 6 years of gaming developments skewing my reactions and assumptions and watering down its achievements. That said, I want to convey how it feels to play today, not reiterate how impressive it might have been for its time.",
       body: [
         `There's a lot to commend about Alien: Isolation, particularly given that it was released in 2014. Playing it now, I'm conscious there are another 6 years of gaming developments skewing my reactions and assumptions and watering down its achievements. That said, I want to convey how it feels to play today, not reiterate how impressive it might have been for its time.`,
         `This review eschews comparison to the Alien films, since the game ought to stand on its own, but for context: the player assumes the role of Amanda Ripley, Ellen Ripley's daughter, who is determined to learn what happened to her mother after her vessel, the Nostromo, went missing. Amanda joins the crew of a new ship, the Torrens, and heads to the Sevastopol space station in search of the Nostromo flight recorder and other clues. Unsurprisingly, chaos has unfolded there, and - spoiler alert! - the Alien is onboard wreaking havoc.`,
