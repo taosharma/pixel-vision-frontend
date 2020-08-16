@@ -85,6 +85,16 @@ audio:focus {
   transition: 0.3s;
 }
 
+a {
+  color: #ff47f0;
+  text-decoration: none;
+}
+
+i {
+  font-style: italic;
+  font-weight: bold;
+}
+
 @media only screen and (max-width: 500px) {
   .Post {
     flex-wrap: nowrap;
