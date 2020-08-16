@@ -115,6 +115,7 @@ a {
 
 i {
   font-style: italic;
+  font-weight: normal;
 }
 
 @media only screen and (max-width: 500px) {
