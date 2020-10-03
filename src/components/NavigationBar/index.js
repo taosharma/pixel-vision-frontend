@@ -47,7 +47,7 @@ function NavigationBar({ links }) {
   }
 
   return (
-    <section className={css.NavigationBar}>
+    <nav className={css.NavigationBar}>
       {links.map((link, index) => (
         <p
           className={
@@ -59,7 +59,7 @@ function NavigationBar({ links }) {
           {link}
         </p>
       ))}
-    </section>
+    </nav>
   );
 }
 

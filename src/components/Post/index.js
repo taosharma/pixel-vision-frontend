@@ -85,7 +85,10 @@ function Post({ post, submitComment, handleCurrentPost }) {
               <p>Audio Extracts:</p>
               <ul>
                 {text.audioExtracts.map((audioExtract, index) => (
-                  <li key={index}>{audioExtract}</li>
+                  <li
+                    key={index}
+                    dangerouslySetInnerHTML={createMarkup(audioExtract)}
+                  ></li>
                 ))}
               </ul>
             </div>
@@ -95,7 +98,10 @@ function Post({ post, submitComment, handleCurrentPost }) {
               <p>Clarifications:</p>
               <ol>
                 {text.clarifications.map((clarification, index) => (
-                  <li key={index}>{clarification}</li>
+                  <li
+                    key={index}
+                    dangerouslySetInnerHTML={createMarkup(clarification)}
+                  ></li>
                 ))}
               </ol>
             </div>
