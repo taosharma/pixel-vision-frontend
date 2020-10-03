@@ -11,7 +11,7 @@ const defaultActive = [
   { link: 'reviews', active: false },
   { link: 'characters', active: false },
   { link: 'patreon', active: false },
-  { link: 'contact', active: false },
+  { link: 'subscribe', active: false },
 ];
 
 function NavigationBar({ links }) {

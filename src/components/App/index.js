@@ -17,7 +17,7 @@ import { Switch, Route, useLocation } from 'react-router-dom';
 import Header from '../Header';
 import Page from '../Page';
 import Characters from '../Characters';
-import Contact from '../Contact';
+import Subscribe from '../Subscribe';
 import Post from '../Post';
 
 // Example data:
@@ -118,8 +118,8 @@ accordingly. */
     <section className={css.App}>
       <Header />
       <Switch>
-        <Route path="/contact">
-          <Contact />
+        <Route path="/subscribe">
+          <Subscribe />
         </Route>
         <Route path="/characters">
           <Characters />

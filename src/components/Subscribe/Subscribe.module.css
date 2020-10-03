@@ -1,4 +1,4 @@
-.Contact {
+.Subscribe {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -56,7 +56,7 @@
 }
 
 @media only screen and (max-width: 500px) {
-  .Contact {
+  .Subscribe {
     flex-wrap: nowrap;
     width: 30vw;
     min-width: 15em;
@@ -81,7 +81,7 @@
 }
 
 @media only screen and (max-width: 300px) {
-  .Contact {
+  .Subscribe {
     flex-wrap: nowrap;
     width: 30vw;
     min-width: 12em;
@@ -106,7 +106,7 @@
 }
 
 @media only screen and (max-width: 260px) {
-  .Contact {
+  .Subscribe {
     flex-wrap: nowrap;
     width: 30vw;
     min-width: 10em;
