@@ -1,38 +1,36 @@
-//TODO: Remove box shadow for Ben
-//TODO: Change 'writing' to 'reviews'
 //TODO: Add google analytics.
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
-import ReactGA from 'react-ga';
+import ReactGA from "react-ga";
 
-import css from './App.module.css';
+import css from "./App.module.css";
 
 // Modules:
 
-import { Switch, Route, useLocation } from 'react-router-dom';
+import { Switch, Route, useLocation } from "react-router-dom";
 
 // Components:
 
-import Header from '../Header';
-import Page from '../Page';
-import Characters from '../Characters';
-import Subscribe from '../Subscribe';
-import Post from '../Post';
+import Header from "../Header";
+import Page from "../Page";
+import Characters from "../Characters";
+import Subscribe from "../Subscribe";
+import Post from "../Post";
 
 // Example data:
 
-import exampleEpisodes from '../../dummyData/episodes';
-import exampleWriting from '../../dummyData/writing';
+import exampleEpisodes from "../../dummyData/episodes";
+import exampleWriting from "../../dummyData/writing";
 
 // The usePageViews function uses sets up a useEffect that sends data to google analytics when a page is viewed.
 
-ReactGA.initialize('UA-175510184-');
+ReactGA.initialize("UA-175510184-1");
 
 function usePageViews() {
   let location = useLocation();
 
-  useEffect(() => {
+  return useEffect(() => {
     ReactGA.pageview(location.pathname);
   }, [location]);
 }
@@ -42,7 +40,13 @@ function usePageViews() {
 function App() {
   // Calls the usePageViews function to setup google analytics tracking.
 
-  usePageViews();
+  let location = useLocation();
+
+  useEffect(() => {
+    ReactGA.pageview(location.pathname);
+  }, [location]);
+
+  // usePageViews();
 
   // The episodes and writing state holds the two types of post that are listed on the website.
 
@@ -57,20 +61,20 @@ accordingly. */
   useEffect(() => {
     async function fetchPosts() {
       const response = await fetch(
-        'https://8dqjmptiu8.execute-api.eu-west-1.amazonaws.com/dev/'
+        "https://8dqjmptiu8.execute-api.eu-west-1.amazonaws.com/dev/"
       );
 
       const posts = await response.json();
       setPosts(posts);
       setCurrentPost(posts[0]);
 
-      const episodes = posts.filter((post) => post.type === 'episode');
+      const episodes = posts.filter((post) => post.type === "episode");
       const reverseOrderEpisodes = episodes
         .sort((a, b) => parseFloat(a.number) - parseFloat(b.number))
         .reverse();
       setEpisodes(reverseOrderEpisodes);
 
-      const writing = posts.filter((post) => post.type === 'writing');
+      const writing = posts.filter((post) => post.type === "writing");
       const reverseOrderWriting = writing
         .sort((a, b) => parseFloat(a.number) - parseFloat(b.number))
         .reverse();
@@ -87,15 +91,15 @@ accordingly. */
     await fetch(
       `https://8dqjmptiu8.execute-api.eu-west-1.amazonaws.com/dev/id/${postId}`,
       {
-        method: 'PATCH',
-        mode: 'cors',
-        cache: 'no-cache',
-        credentials: 'same-origin',
+        method: "PATCH",
+        mode: "cors",
+        cache: "no-cache",
+        credentials: "same-origin",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-        redirect: 'follow',
-        referrerPolicy: 'no-referrer',
+        redirect: "follow",
+        referrerPolicy: "no-referrer",
         body: JSON.stringify(updatedComments),
       }
     );
