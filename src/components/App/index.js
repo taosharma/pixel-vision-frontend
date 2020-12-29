@@ -25,7 +25,7 @@ import exampleWriting from "../../dummyData/writing";
 
 // The usePageViews function uses sets up a useEffect that sends data to google analytics when a page is viewed.
 
-ReactGA.initialize("257356691");
+ReactGA.initialize("UA-186235390-1 ");
 
 function usePageViews() {
   let location = useLocation();
