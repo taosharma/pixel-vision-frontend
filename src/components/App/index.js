@@ -1,6 +1,6 @@
 //TODO: Add google analytics.
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense, lazy } from "react";
 
 import ReactGA from "react-ga";
 
@@ -10,29 +10,42 @@ import css from "./App.module.css";
 
 import { Switch, Route, useLocation } from "react-router-dom";
 
-// Components:
-
-import Header from "../Header";
-import Page from "../Page";
-import Characters from "../Characters";
-import Subscribe from "../Subscribe";
-import Post from "../Post";
-
 // Example data:
 
 import exampleEpisodes from "../../dummyData/episodes";
 import exampleWriting from "../../dummyData/writing";
 
-// The usePageViews function uses sets up a useEffect that sends data to google analytics when a page is viewed.
+// Components:
+
+import Header from "../Header";
+// const Header = lazy(() => import("../Header"));
+const Page = lazy(() => import("../Page"));
+const Characters = lazy(() => import("../Characters"));
+const Subscribe = lazy(() => import("../Subscribe"));
+const Post = lazy(() => import("../Post"));
+
+// For Google Analytics
 
 ReactGA.initialize("UA-186235390-1 ");
 
-function usePageViews() {
-  let location = useLocation();
+// Function to reverse episode order.
 
-  return useEffect(() => {
-    ReactGA.pageview(location.pathname);
-  }, [location]);
+function reversePostsOrder(posts) {
+  return posts
+    .sort((a, b) => parseFloat(a.number) - parseFloat(b.number))
+    .reverse();
+}
+
+// Function to filter out unreleased posts.
+
+function filterUnreleasedPosts(post) {
+  const { date } = post.text;
+  const dateArray = date.split(" ");
+  const dateObject = new Date(
+    `${dateArray[1]} ${dateArray[0]}, ${dateArray[2]}`
+  );
+  const currentDate = new Date();
+  return dateObject < currentDate;
 }
 
 // App component:
@@ -65,19 +78,16 @@ accordingly. */
       );
 
       const posts = await response.json();
-      setPosts(posts);
+      const releasedPosts = posts.filter(filterUnreleasedPosts);
+      setPosts(releasedPosts);
       setCurrentPost(posts[0]);
 
-      const episodes = posts.filter((post) => post.type === "episode");
-      const reverseOrderEpisodes = episodes
-        .sort((a, b) => parseFloat(a.number) - parseFloat(b.number))
-        .reverse();
+      const episodes = releasedPosts.filter((post) => post.type === "episode");
+      const reverseOrderEpisodes = reversePostsOrder(episodes);
       setEpisodes(reverseOrderEpisodes);
 
-      const writing = posts.filter((post) => post.type === "writing");
-      const reverseOrderWriting = writing
-        .sort((a, b) => parseFloat(a.number) - parseFloat(b.number))
-        .reverse();
+      const writing = releasedPosts.filter((post) => post.type === "writing");
+      const reverseOrderWriting = reversePostsOrder(writing);
       setWriting(reverseOrderWriting);
     }
     fetchPosts();
@@ -120,35 +130,37 @@ accordingly. */
 
   return (
     <section className={css.App}>
-      <Header />
-      <Switch>
-        <Route path="/subscribe">
-          <Subscribe />
-        </Route>
-        <Route path="/characters">
-          <Characters />
-        </Route>
-        <Route path="/writing/:postId">
-          <Post
-            post={currentPost}
-            submitComment={submitComment}
-            handleCurrentPost={handleCurrentPost}
-          />
-        </Route>
-        <Route path="/reviews">
-          <Page posts={writing} />
-        </Route>
-        <Route path="/episode/:postId">
-          <Post
-            post={currentPost}
-            submitComment={submitComment}
-            handleCurrentPost={handleCurrentPost}
-          />
-        </Route>
-        <Route path="/">
-          <Page posts={episodes} />
-        </Route>
-      </Switch>
+      <Suspense fallback={<Header />}>
+        <Header />
+        <Switch>
+          <Route path="/subscribe">
+            <Subscribe />
+          </Route>
+          <Route path="/characters">
+            <Characters />
+          </Route>
+          <Route path="/writing/:postId">
+            <Post
+              post={currentPost}
+              submitComment={submitComment}
+              handleCurrentPost={handleCurrentPost}
+            />
+          </Route>
+          <Route path="/reviews">
+            <Page posts={writing} />
+          </Route>
+          <Route path="/episode/:postId">
+            <Post
+              post={currentPost}
+              submitComment={submitComment}
+              handleCurrentPost={handleCurrentPost}
+            />
+          </Route>
+          <Route path="/">
+            <Page posts={episodes} />
+          </Route>
+        </Switch>
+      </Suspense>
     </section>
   );
 }
