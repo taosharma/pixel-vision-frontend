@@ -23,16 +23,28 @@ import Post from "../Post";
 import exampleEpisodes from "../../dummyData/episodes";
 import exampleWriting from "../../dummyData/writing";
 
-// The usePageViews function uses sets up a useEffect that sends data to google analytics when a page is viewed.
+// For Google Analytics
 
 ReactGA.initialize("UA-186235390-1 ");
 
-function usePageViews() {
-  let location = useLocation();
+// Function to reverse episode order.
 
-  return useEffect(() => {
-    ReactGA.pageview(location.pathname);
-  }, [location]);
+function reversePostsOrder(posts) {
+  return posts
+    .sort((a, b) => parseFloat(a.number) - parseFloat(b.number))
+    .reverse();
+}
+
+// Function to filter out unreleased posts.
+
+function filterUnreleasedPosts(post) {
+  const { date } = post.text;
+  const dateArray = date.split(" ");
+  const dateObject = new Date(
+    `${dateArray[1]} ${dateArray[0]}, ${dateArray[2]}`
+  );
+  const currentDate = new Date();
+  return dateObject < currentDate;
 }
 
 // App component:
@@ -65,19 +77,16 @@ accordingly. */
       );
 
       const posts = await response.json();
-      setPosts(posts);
+      const releasedPosts = posts.filter(filterUnreleasedPosts);
+      setPosts(releasedPosts);
       setCurrentPost(posts[0]);
 
-      const episodes = posts.filter((post) => post.type === "episode");
-      const reverseOrderEpisodes = episodes
-        .sort((a, b) => parseFloat(a.number) - parseFloat(b.number))
-        .reverse();
+      const episodes = releasedPosts.filter((post) => post.type === "episode");
+      const reverseOrderEpisodes = reversePostsOrder(episodes);
       setEpisodes(reverseOrderEpisodes);
 
-      const writing = posts.filter((post) => post.type === "writing");
-      const reverseOrderWriting = writing
-        .sort((a, b) => parseFloat(a.number) - parseFloat(b.number))
-        .reverse();
+      const writing = releasedPosts.filter((post) => post.type === "writing");
+      const reverseOrderWriting = reversePostsOrder(writing);
       setWriting(reverseOrderWriting);
     }
     fetchPosts();
