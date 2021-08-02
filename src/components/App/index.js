@@ -1,6 +1,6 @@
 //TODO: Add google analytics.
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense, lazy } from "react";
 
 import ReactGA from "react-ga";
 
@@ -10,18 +10,19 @@ import css from "./App.module.css";
 
 import { Switch, Route, useLocation } from "react-router-dom";
 
-// Components:
-
-import Header from "../Header";
-import Page from "../Page";
-import Characters from "../Characters";
-import Subscribe from "../Subscribe";
-import Post from "../Post";
-
 // Example data:
 
 import exampleEpisodes from "../../dummyData/episodes";
 import exampleWriting from "../../dummyData/writing";
+
+// Components:
+
+import Header from "../Header";
+// const Header = lazy(() => import("../Header"));
+const Page = lazy(() => import("../Page"));
+const Characters = lazy(() => import("../Characters"));
+const Subscribe = lazy(() => import("../Subscribe"));
+const Post = lazy(() => import("../Post"));
 
 // For Google Analytics
 
@@ -129,35 +130,37 @@ accordingly. */
 
   return (
     <section className={css.App}>
-      <Header />
-      <Switch>
-        <Route path="/subscribe">
-          <Subscribe />
-        </Route>
-        <Route path="/characters">
-          <Characters />
-        </Route>
-        <Route path="/writing/:postId">
-          <Post
-            post={currentPost}
-            submitComment={submitComment}
-            handleCurrentPost={handleCurrentPost}
-          />
-        </Route>
-        <Route path="/reviews">
-          <Page posts={writing} />
-        </Route>
-        <Route path="/episode/:postId">
-          <Post
-            post={currentPost}
-            submitComment={submitComment}
-            handleCurrentPost={handleCurrentPost}
-          />
-        </Route>
-        <Route path="/">
-          <Page posts={episodes} />
-        </Route>
-      </Switch>
+      <Suspense fallback={<Header />}>
+        <Header />
+        <Switch>
+          <Route path="/subscribe">
+            <Subscribe />
+          </Route>
+          <Route path="/characters">
+            <Characters />
+          </Route>
+          <Route path="/writing/:postId">
+            <Post
+              post={currentPost}
+              submitComment={submitComment}
+              handleCurrentPost={handleCurrentPost}
+            />
+          </Route>
+          <Route path="/reviews">
+            <Page posts={writing} />
+          </Route>
+          <Route path="/episode/:postId">
+            <Post
+              post={currentPost}
+              submitComment={submitComment}
+              handleCurrentPost={handleCurrentPost}
+            />
+          </Route>
+          <Route path="/">
+            <Page posts={episodes} />
+          </Route>
+        </Switch>
+      </Suspense>
     </section>
   );
 }
